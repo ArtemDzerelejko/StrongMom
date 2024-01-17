@@ -21,13 +21,13 @@ struct PrimaryButton: View {
             print("Button press")
         }, label: {
             Text(buttonText)
-                .font(.custom(Fonts.montserrat_SemiBold, size: 14))
+                .font(AppFont.Body1)
                 .foregroundColor(.white)
-                .frame(width: buttonSize.width, height: buttonSize.height)
-                .frame(maxWidth: .infinity)
-                .background(Color.customPurple)
-                .cornerRadius(23)
         })
+        .frame(width: buttonSize.width, height: buttonSize.height)
+        .frame(maxWidth: .infinity)
+        .background(Color.customPurple)
+        .cornerRadius(23)
         .buttonStyle(PlainButtonStyle())
     }
 }

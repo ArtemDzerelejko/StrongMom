@@ -18,7 +18,7 @@ struct OnboardingScreenView: View {
             
             VStack {
                 Text(Strings.welcomeText)
-                    .font(.custom(Fonts.montserrat_Bold, size: 28))
+                    .font(AppFont.Headline1)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .padding(.trailing, 82)

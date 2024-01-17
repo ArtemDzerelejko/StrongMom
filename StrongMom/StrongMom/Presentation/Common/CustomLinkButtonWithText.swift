@@ -22,7 +22,6 @@ struct CustomLinkButtonWithText: View {
         HStack {
             Text(text)
                 .foregroundColor(.white)
-            
             Button(action: {
                 onTapAction()
             }) {
@@ -31,7 +30,7 @@ struct CustomLinkButtonWithText: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
-        .font(.custom(Fonts.montserrat_SemiBold, size: 14))
+        .font(AppFont.Body1)
     }
 }
 

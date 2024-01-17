@@ -23,7 +23,7 @@
 		AC0481352B582D290001212D /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481342B582D290001212D /* PrimaryButton.swift */; };
 		AC0481372B5834C30001212D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481362B5834C30001212D /* Strings.swift */; };
 		AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */; };
-		AC04813B2B5872EC0001212D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04813A2B5872EC0001212D /* Fonts.swift */; };
+		AC04813D2B588DE10001212D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04813C2B588DE10001212D /* AppFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		AC0481342B582D290001212D /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		AC0481362B5834C30001212D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLinkButtonWithText.swift; sourceTree = "<group>"; };
-		AC04813A2B5872EC0001212D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		AC04813C2B588DE10001212D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		AC0480F82B57EF1B0001212D /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				AC04813A2B5872EC0001212D /* Fonts.swift */,
+				AC04813C2B588DE10001212D /* AppFont.swift */,
 				AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */,
 				AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */,
 				AC0481032B57FD260001212D /* Montserrat-Bold.ttf */,
@@ -314,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC04813B2B5872EC0001212D /* Fonts.swift in Sources */,
+				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
