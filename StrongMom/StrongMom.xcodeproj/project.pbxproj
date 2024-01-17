@@ -18,6 +18,7 @@
 		AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810B2B57FDCA0001212D /* Montserrat-Regular.ttf */; };
 		AC04810E2B57FDE10001212D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */; };
 		AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */; };
+		AC04811F2B580FD20001212D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AC04810B2B57FDCA0001212D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		AC0480F82B57EF1B0001212D /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */,
 				AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */,
 				AC0481032B57FD260001212D /* Montserrat-Bold.ttf */,
 				AC0481072B57FD940001212D /* Montserrat-Light.ttf */,
@@ -281,6 +284,7 @@
 				AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */,
 				AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */,
 				AC0481062B57FD750001212D /* Montserrat-ExtraLight.ttf in Resources */,
+				AC04811F2B580FD20001212D /* Montserrat-ExtraBold.ttf in Resources */,
 				AC0480DE2B5733650001212D /* Assets.xcassets in Resources */,
 				AC04810A2B57FDB50001212D /* Montserrat-Medium.ttf in Resources */,
 				AC04810E2B57FDE10001212D /* Montserrat-SemiBold.ttf in Resources */,
