@@ -67,8 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				AC0480FF2B57F98A0001212D /* App */,
+				AC0481112B580C3C0001212D /* Data */,
+				AC0481162B580CEE0001212D /* Domain */,
 				AC0481002B57FA4A0001212D /* Presentation */,
 				AC0480FC2B57F8750001212D /* Resources */,
+				AC04811A2B580D270001212D /* Util */,
 			);
 			path = StrongMom;
 			sourceTree = "<group>";
@@ -136,6 +139,83 @@
 				AC0480DB2B5733630001212D /* ContentView.swift */,
 			);
 			path = Stories;
+			sourceTree = "<group>";
+		};
+		AC0481112B580C3C0001212D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481122B580C4A0001212D /* Repositories */,
+				AC0481132B580C560001212D /* Models */,
+				AC0481152B580C730001212D /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AC0481122B580C4A0001212D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AC0481132B580C560001212D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC0481152B580C730001212D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC0481162B580CEE0001212D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481172B580CF70001212D /* UseCase */,
+				AC0481182B580D010001212D /* Repositories */,
+				AC0481192B580D0D0001212D /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AC0481172B580CF70001212D /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		AC0481182B580D010001212D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AC0481192B580D0D0001212D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC04811A2B580D270001212D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AC04811B2B580D390001212D /* Extensions */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AC04811B2B580D390001212D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
