@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0480D92B5733630001212D /* StrongMomApp.swift */; };
+		AC0480DC2B5733630001212D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0480DB2B5733630001212D /* ContentView.swift */; };
+		AC0480DE2B5733650001212D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0480DD2B5733650001212D /* Assets.xcassets */; };
+		AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0480E02B5733650001212D /* Preview Assets.xcassets */; };
+		AC0481042B57FD260001212D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0481032B57FD260001212D /* Montserrat-Bold.ttf */; };
+		AC0481062B57FD750001212D /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */; };
+		AC0481082B57FD940001212D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0481072B57FD940001212D /* Montserrat-Light.ttf */; };
+		AC04810A2B57FDB50001212D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0481092B57FDB50001212D /* Montserrat-Medium.ttf */; };
+		AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810B2B57FDCA0001212D /* Montserrat-Regular.ttf */; };
+		AC04810E2B57FDE10001212D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */; };
+		AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */; };
+		AC04811F2B580FD20001212D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC0480D62B5733630001212D /* StrongMom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrongMom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0480D92B5733630001212D /* StrongMomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongMomApp.swift; sourceTree = "<group>"; };
+		AC0480DB2B5733630001212D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC0480DD2B5733650001212D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC0480E02B5733650001212D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC0480FB2B57EF930001212D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC0481032B57FD260001212D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		AC0481072B57FD940001212D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		AC0481092B57FDB50001212D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		AC04810B2B57FDCA0001212D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC0480D32B5733630001212D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC0480CD2B5733630001212D = {
+			isa = PBXGroup;
+			children = (
+				AC0480D82B5733630001212D /* StrongMom */,
+				AC0480D72B5733630001212D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC0480D72B5733630001212D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480D62B5733630001212D /* StrongMom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC0480D82B5733630001212D /* StrongMom */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480FF2B57F98A0001212D /* App */,
+				AC0481112B580C3C0001212D /* Data */,
+				AC0481162B580CEE0001212D /* Domain */,
+				AC0481002B57FA4A0001212D /* Presentation */,
+				AC0480FC2B57F8750001212D /* Resources */,
+				AC04811A2B580D270001212D /* Util */,
+			);
+			path = StrongMom;
+			sourceTree = "<group>";
+		};
+		AC0480DF2B5733650001212D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480E02B5733650001212D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC0480F82B57EF1B0001212D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */,
+				AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */,
+				AC0481032B57FD260001212D /* Montserrat-Bold.ttf */,
+				AC0481072B57FD940001212D /* Montserrat-Light.ttf */,
+				AC0481092B57FDB50001212D /* Montserrat-Medium.ttf */,
+				AC04810B2B57FDCA0001212D /* Montserrat-Regular.ttf */,
+				AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */,
+				AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AC0480FC2B57F8750001212D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480DD2B5733650001212D /* Assets.xcassets */,
+				AC0480F82B57EF1B0001212D /* Font */,
+				AC0480DF2B5733650001212D /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC0480FF2B57F98A0001212D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480D92B5733630001212D /* StrongMomApp.swift */,
+				AC0480FB2B57EF930001212D /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AC0481002B57FA4A0001212D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481012B57FA640001212D /* Common */,
+				AC0481022B57FA6E0001212D /* Stories */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC0481012B57FA640001212D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AC0481022B57FA6E0001212D /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				AC0480DB2B5733630001212D /* ContentView.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		AC0481112B580C3C0001212D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481122B580C4A0001212D /* Repositories */,
+				AC0481132B580C560001212D /* Models */,
+				AC0481152B580C730001212D /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AC0481122B580C4A0001212D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AC0481132B580C560001212D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC0481152B580C730001212D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC0481162B580CEE0001212D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481172B580CF70001212D /* UseCase */,
+				AC0481182B580D010001212D /* Repositories */,
+				AC0481192B580D0D0001212D /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AC0481172B580CF70001212D /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		AC0481182B580D010001212D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AC0481192B580D0D0001212D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC04811A2B580D270001212D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AC04811B2B580D390001212D /* Extensions */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AC04811B2B580D390001212D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC0480D52B5733630001212D /* StrongMom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC0480E42B5733650001212D /* Build configuration list for PBXNativeTarget "StrongMom" */;
+			buildPhases = (
+				AC0480D22B5733630001212D /* Sources */,
+				AC0480D32B5733630001212D /* Frameworks */,
+				AC0480D42B5733630001212D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrongMom;
+			productName = StrongMom;
+			productReference = AC0480D62B5733630001212D /* StrongMom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC0480CE2B5733630001212D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					AC0480D52B5733630001212D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = AC0480D12B5733630001212D /* Build configuration list for PBXProject "StrongMom" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC0480CD2B5733630001212D;
+			productRefGroup = AC0480D72B5733630001212D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC0480D52B5733630001212D /* StrongMom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC0480D42B5733630001212D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0481082B57FD940001212D /* Montserrat-Light.ttf in Resources */,
+				AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */,
+				AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */,
+				AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */,
+				AC0481062B57FD750001212D /* Montserrat-ExtraLight.ttf in Resources */,
+				AC04811F2B580FD20001212D /* Montserrat-ExtraBold.ttf in Resources */,
+				AC0480DE2B5733650001212D /* Assets.xcassets in Resources */,
+				AC04810A2B57FDB50001212D /* Montserrat-Medium.ttf in Resources */,
+				AC04810E2B57FDE10001212D /* Montserrat-SemiBold.ttf in Resources */,
+				AC0481042B57FD260001212D /* Montserrat-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC0480D22B5733630001212D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0480DC2B5733630001212D /* ContentView.swift in Sources */,
+				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC0480E22B5733650001212D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC0480E32B5733650001212D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC0480E52B5733650001212D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StrongMom/App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.StrongMom";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC0480E62B5733650001212D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StrongMom/App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.StrongMom";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC0480D12B5733630001212D /* Build configuration list for PBXProject "StrongMom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC0480E22B5733650001212D /* Debug */,
+				AC0480E32B5733650001212D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC0480E42B5733650001212D /* Build configuration list for PBXNativeTarget "StrongMom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC0480E52B5733650001212D /* Debug */,
+				AC0480E62B5733650001212D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC0480CE2B5733630001212D /* Project object */;
+}
