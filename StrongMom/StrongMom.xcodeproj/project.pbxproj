@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0480D92B5733630001212D /* StrongMomApp.swift */; };
-		AC0480DC2B5733630001212D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0480DB2B5733630001212D /* ContentView.swift */; };
 		AC0480DE2B5733650001212D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0480DD2B5733650001212D /* Assets.xcassets */; };
 		AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0480E02B5733650001212D /* Preview Assets.xcassets */; };
 		AC0481042B57FD260001212D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC0481032B57FD260001212D /* Montserrat-Bold.ttf */; };
@@ -19,12 +18,19 @@
 		AC04810E2B57FDE10001212D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */; };
 		AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */; };
 		AC04811F2B580FD20001212D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */; };
+		AC0481212B581C710001212D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481202B581C710001212D /* SplashScreenView.swift */; };
+		AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481322B582C040001212D /* OnboardingScreenView.swift */; };
+		AC0481352B582D290001212D /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481342B582D290001212D /* PrimaryButton.swift */; };
+		AC0481372B5834C30001212D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481362B5834C30001212D /* Strings.swift */; };
+		AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */; };
+		AC04813D2B588DE10001212D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04813C2B588DE10001212D /* AppFont.swift */; };
+		AC0481402B5915F70001212D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC0481422B5915F70001212D /* Localizable.strings */; };
+		AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481452B5916C50001212D /* Localizable+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC0480D62B5733630001212D /* StrongMom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrongMom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0480D92B5733630001212D /* StrongMomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongMomApp.swift; sourceTree = "<group>"; };
-		AC0480DB2B5733630001212D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC0480DD2B5733650001212D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0480E02B5733650001212D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC0480FB2B57EF930001212D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +42,14 @@
 		AC04810D2B57FDE10001212D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		AC04810F2B57FDFD0001212D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AC0481202B581C710001212D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		AC0481322B582C040001212D /* OnboardingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenView.swift; sourceTree = "<group>"; };
+		AC0481342B582D290001212D /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		AC0481362B5834C30001212D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLinkButtonWithText.swift; sourceTree = "<group>"; };
+		AC04813C2B588DE10001212D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		AC0481412B5915F70001212D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AC0481452B5916C50001212D /* Localizable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +103,7 @@
 		AC0480F82B57EF1B0001212D /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				AC04813C2B588DE10001212D /* AppFont.swift */,
 				AC04811E2B580FD20001212D /* Montserrat-ExtraBold.ttf */,
 				AC0481052B57FD750001212D /* Montserrat-ExtraLight.ttf */,
 				AC0481032B57FD260001212D /* Montserrat-Bold.ttf */,
@@ -104,6 +119,8 @@
 		AC0480FC2B57F8750001212D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481362B5834C30001212D /* Strings.swift */,
+				AC0481442B5916860001212D /* Localized */,
 				AC0480DD2B5733650001212D /* Assets.xcassets */,
 				AC0480F82B57EF1B0001212D /* Font */,
 				AC0480DF2B5733650001212D /* Preview Content */,
@@ -132,6 +149,8 @@
 		AC0481012B57FA640001212D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481342B582D290001212D /* PrimaryButton.swift */,
+				AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -139,7 +158,8 @@
 		AC0481022B57FA6E0001212D /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				AC0480DB2B5733630001212D /* ContentView.swift */,
+				AC0481202B581C710001212D /* SplashScreenView.swift */,
+				AC0481322B582C040001212D /* OnboardingScreenView.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -217,8 +237,17 @@
 		AC04811B2B580D390001212D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481452B5916C50001212D /* Localizable+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC0481442B5916860001212D /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481422B5915F70001212D /* Localizable.strings */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +310,7 @@
 			files = (
 				AC0481082B57FD940001212D /* Montserrat-Light.ttf in Resources */,
 				AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */,
+				AC0481402B5915F70001212D /* Localizable.strings in Resources */,
 				AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */,
 				AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */,
 				AC0481062B57FD750001212D /* Montserrat-ExtraLight.ttf in Resources */,
@@ -299,12 +329,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC0480DC2B5733630001212D /* ContentView.swift in Sources */,
+				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
+				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
+				AC0481372B5834C30001212D /* Strings.swift in Sources */,
+				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
+				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
+				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
+				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC0481422B5915F70001212D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC0481412B5915F70001212D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AC0480E22B5733650001212D /* Debug */ = {
@@ -312,6 +359,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -359,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -375,6 +423,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -416,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -442,6 +491,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +525,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
