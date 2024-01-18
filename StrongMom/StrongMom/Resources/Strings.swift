@@ -13,8 +13,9 @@ struct Strings {
     
     // MARK: - OnboardingScreenView
     static let onboardingBackground: String = "onboardingBackground"
-    static let welcomeText: String = "Welcome to the\nstrong life"
-    static let createAccount: String = "Create account"
-    static let haveAccount: String = "Already have an account?"
-    static let logIn: String = "Log In"
+    static let welcomeText: String = "welcomeText".localized
+    static let createAccount: String = "createAccount".localized
+    static let haveAccount: String = "haveAccount".localized
+    static let logIn: String = "logIn".localized
 }
+

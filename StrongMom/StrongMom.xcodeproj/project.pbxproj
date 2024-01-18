@@ -24,6 +24,8 @@
 		AC0481372B5834C30001212D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481362B5834C30001212D /* Strings.swift */; };
 		AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */; };
 		AC04813D2B588DE10001212D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04813C2B588DE10001212D /* AppFont.swift */; };
+		AC0481402B5915F70001212D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC0481422B5915F70001212D /* Localizable.strings */; };
+		AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481452B5916C50001212D /* Localizable+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		AC0481362B5834C30001212D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLinkButtonWithText.swift; sourceTree = "<group>"; };
 		AC04813C2B588DE10001212D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		AC0481412B5915F70001212D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AC0481452B5916C50001212D /* Localizable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0481362B5834C30001212D /* Strings.swift */,
+				AC0481442B5916860001212D /* Localized */,
 				AC0480DD2B5733650001212D /* Assets.xcassets */,
 				AC0480F82B57EF1B0001212D /* Font */,
 				AC0480DF2B5733650001212D /* Preview Content */,
@@ -232,8 +237,17 @@
 		AC04811B2B580D390001212D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481452B5916C50001212D /* Localizable+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC0481442B5916860001212D /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481422B5915F70001212D /* Localizable.strings */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +310,7 @@
 			files = (
 				AC0481082B57FD940001212D /* Montserrat-Light.ttf in Resources */,
 				AC0481102B57FDFD0001212D /* Montserrat-Thin.ttf in Resources */,
+				AC0481402B5915F70001212D /* Localizable.strings in Resources */,
 				AC0480E12B5733650001212D /* Preview Assets.xcassets in Resources */,
 				AC04810C2B57FDCA0001212D /* Montserrat-Regular.ttf in Resources */,
 				AC0481062B57FD750001212D /* Montserrat-ExtraLight.ttf in Resources */,
@@ -318,6 +333,7 @@
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
+				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
 				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
 				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
@@ -326,12 +342,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		AC0481422B5915F70001212D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC0481412B5915F70001212D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		AC0480E22B5733650001212D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -379,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -395,6 +423,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -436,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -462,6 +491,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +525,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

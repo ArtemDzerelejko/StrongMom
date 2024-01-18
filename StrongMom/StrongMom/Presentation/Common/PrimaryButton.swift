@@ -10,15 +10,17 @@ import SwiftUI
 struct PrimaryButton: View {
     let buttonText: String
     let buttonSize: CGSize
+    let action: () -> Void
     
-    init(text: String, size: CGSize) {
+    init(text: String, size: CGSize, action: @escaping () -> Void) {
         self.buttonText = text
         self.buttonSize = size
+        self.action = action
     }
     
     var body: some View {
         Button(action: {
-            print("Button press")
+            action()
         }, label: {
             Text(buttonText)
                 .font(AppFont.Body1)

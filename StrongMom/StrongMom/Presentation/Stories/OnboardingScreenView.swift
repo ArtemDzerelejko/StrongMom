@@ -24,7 +24,9 @@ struct OnboardingScreenView: View {
                     .padding(.trailing, 82)
                     .padding(.bottom, 133)
                 
-                PrimaryButton(text: Strings.createAccount, size: CGSize(width: 305, height: 46))
+                PrimaryButton(text: Strings.createAccount, size: CGSize(width: 305, height: 46)) {
+                    print("Button press")
+                }
                     .padding(35)
                 
                 CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn) {

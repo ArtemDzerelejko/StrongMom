@@ -1,0 +1,5 @@
+// MARK: - OnboardingScreenView
+"welcomeText" = "Welcome to the\nstrong life";
+"createAccount" = "Create account";
+"haveAccount" = "Already have an account?";
+"logIn" = "Log In";
