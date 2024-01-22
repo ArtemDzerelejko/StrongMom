@@ -21,6 +21,7 @@ struct SignUpView: View {
     @State private var alertMessage = ""
     
     var body: some View {
+        
         VStack {
             BackButton()
             Text(Strings.createAnAccount)
@@ -64,7 +65,15 @@ struct SignUpView: View {
                 let modelForCreateUser = ModelForCreateUser(email: emailTextFieldText, password: passwordTextFieldText, passwordConfirmation: confirmPassword, timezone: TimeZone.current.identifier, acceptedPrivacyPolicy: acceptedPrivacyPolicy, acceptedTermsAndConditions: acceptedTermsAndConditions)
                 print(modelForCreateUser)
                 
-                signUpViewModel.createUser(model: modelForCreateUser)
+                signUpViewModel.createUser(model: modelForCreateUser) { result in
+                    switch result {
+                    case .success(let userTokenResponse):
+                        print("Successfully created user: \(userTokenResponse)")
+                    case .failure(let error):
+                        showAlert = true
+                        alertMessage = Strings.failedToCreateUser + "\(error.localizedDescription)"
+                    }
+                }
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
@@ -102,7 +111,8 @@ struct SignUpView: View {
             })
             .padding(.bottom, 25)
             
-            CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack) {}
+            CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack) {
+            }
         }
         .onAppear {
             signUpViewModel.fetchToken()

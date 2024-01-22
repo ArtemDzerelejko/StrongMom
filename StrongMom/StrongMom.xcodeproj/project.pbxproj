@@ -563,6 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 7A3H3B82LM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
@@ -597,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 7A3H3B82LM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;

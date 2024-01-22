@@ -5,7 +5,7 @@
 //  Created by artem on 22.01.2024.
 //
 
-import UIKit
+import SwiftUI
 
 class SignUpViewModel: ObservableObject {
     @Published var tokenResponse: TokenResponse?
@@ -23,8 +23,7 @@ class SignUpViewModel: ObservableObject {
         }
     }
     
-    func createUser(model: ModelForCreateUser) {
-        
+    func createUser(model: ModelForCreateUser, completion: @escaping (Result<UserTokenResponse, Error>) -> Void) {
         guard let token = tokenResponse?.token else {
             print("Token not available. Make sure to fetch the token first.")
             return
@@ -32,12 +31,15 @@ class SignUpViewModel: ObservableObject {
         print(token)
         
         userUseCase.createUser(model: model, token: token) { result in
+            
             switch result {
-            case .success(let userResponse):
-                self.userTokenResponse = userResponse
-                print("UserTokenResponse: \(userResponse)")
+            case .success(let userTokenResponse):
+                self.userTokenResponse = userTokenResponse
+                print("UserTokenResponse: \(userTokenResponse)")
+                completion(.success(userTokenResponse))
             case .failure(let error):
                 print("Failed to fetch token: \(error.localizedDescription)")
+                completion(.failure(error))
             }
         }
     }

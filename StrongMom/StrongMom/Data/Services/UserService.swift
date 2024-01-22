@@ -39,7 +39,7 @@ class UserService {
                                                      headers: HTTPHeaders? = nil,
                                                      completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(url, method: method, parameters: parameters, encoder: encoder, headers: headers)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200...500)
             .responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let result):
