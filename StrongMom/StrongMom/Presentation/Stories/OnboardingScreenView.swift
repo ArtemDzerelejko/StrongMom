@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingScreenView: View {
+    @State var showScreen: Bool = false
     
     var body: some View {
         ZStack {
@@ -24,12 +25,16 @@ struct OnboardingScreenView: View {
                     .padding(.trailing, 82)
                     .padding(.bottom, 133)
                 
-                PrimaryButton(text: Strings.createAccount, size: CGSize(width: 305, height: 46)) {
-                    print("Button press")
+                PrimaryButton(isValid: true, text: Strings.createAccount, size: CGSize(width: 305, height: 46)) {
+                    showScreen.toggle()
                 }
-                    .padding(35)
+                .fullScreenCover(isPresented: $showScreen) {
+                                   SignUpView()
+                               }
+                .padding(35)
                 
-                CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn) {
+                  
+                CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {
                     print("Button tapped!")
                 }
                 .padding(.leading, 69)

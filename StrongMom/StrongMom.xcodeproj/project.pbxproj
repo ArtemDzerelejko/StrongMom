@@ -26,6 +26,21 @@
 		AC04813D2B588DE10001212D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04813C2B588DE10001212D /* AppFont.swift */; };
 		AC0481402B5915F70001212D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC0481422B5915F70001212D /* Localizable.strings */; };
 		AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481452B5916C50001212D /* Localizable+Extensions.swift */; };
+		AC0481482B5947700001212D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481472B5947700001212D /* SignUpView.swift */; };
+		AC04814A2B5948290001212D /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481492B5948290001212D /* BackButton.swift */; };
+		AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04814B2B5955220001212D /* PrimaryTextField.swift */; };
+		AC04814E2B5961E30001212D /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04814D2B5961E30001212D /* SocialMediaButton.swift */; };
+		AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481512B5A87530001212D /* AgreementButtonsView.swift */; };
+		AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481562B5A8A0F0001212D /* ValidatePassword.swift */; };
+		AC0481592B5A8B5D0001212D /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481582B5A8B5D0001212D /* SecureTextField.swift */; };
+		AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04815A2B5A928E0001212D /* ModelForCreateUserRemote.swift */; };
+		AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04815E2B5A93290001212D /* ModelForCreateUser.swift */; };
+		AC0481612B5A938B0001212D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481602B5A938B0001212D /* UserService.swift */; };
+		AC0481642B5A940C0001212D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC0481632B5A940C0001212D /* Alamofire */; };
+		AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */; };
+		AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481692B5AB2730001212D /* UserRepository.swift */; };
+		AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816B2B5AB2B50001212D /* UserUseCase.swift */; };
+		AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816E2B5E4E610001212D /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +65,20 @@
 		AC04813C2B588DE10001212D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		AC0481412B5915F70001212D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC0481452B5916C50001212D /* Localizable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Extensions.swift"; sourceTree = "<group>"; };
+		AC0481472B5947700001212D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AC0481492B5948290001212D /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		AC04814B2B5955220001212D /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
+		AC04814D2B5961E30001212D /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
+		AC0481512B5A87530001212D /* AgreementButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementButtonsView.swift; sourceTree = "<group>"; };
+		AC0481562B5A8A0F0001212D /* ValidatePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePassword.swift; sourceTree = "<group>"; };
+		AC0481582B5A8B5D0001212D /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		AC04815A2B5A928E0001212D /* ModelForCreateUserRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForCreateUserRemote.swift; sourceTree = "<group>"; };
+		AC04815E2B5A93290001212D /* ModelForCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForCreateUser.swift; sourceTree = "<group>"; };
+		AC0481602B5A938B0001212D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		AC0481692B5AB2730001212D /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		AC04816B2B5AB2B50001212D /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
+		AC04816E2B5E4E610001212D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0481642B5A940C0001212D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +179,14 @@
 		AC0481012B57FA640001212D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481552B5A89E70001212D /* CheckPassword */,
 				AC0481342B582D290001212D /* PrimaryButton.swift */,
 				AC0481382B5837B40001212D /* CustomLinkButtonWithText.swift */,
+				AC0481492B5948290001212D /* BackButton.swift */,
+				AC04814B2B5955220001212D /* PrimaryTextField.swift */,
+				AC0481582B5A8B5D0001212D /* SecureTextField.swift */,
+				AC04814D2B5961E30001212D /* SocialMediaButton.swift */,
+				AC0481512B5A87530001212D /* AgreementButtonsView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -160,6 +196,7 @@
 			children = (
 				AC0481202B581C710001212D /* SplashScreenView.swift */,
 				AC0481322B582C040001212D /* OnboardingScreenView.swift */,
+				AC04816D2B5E4E4A0001212D /* SignUp */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -177,6 +214,7 @@
 		AC0481122B580C4A0001212D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481692B5AB2730001212D /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -184,6 +222,7 @@
 		AC0481132B580C560001212D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC04815A2B5A928E0001212D /* ModelForCreateUserRemote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +230,7 @@
 		AC0481152B580C730001212D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481602B5A938B0001212D /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -208,6 +248,7 @@
 		AC0481172B580CF70001212D /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				AC04816B2B5AB2B50001212D /* UserUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -215,6 +256,7 @@
 		AC0481182B580D010001212D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -222,6 +264,7 @@
 		AC0481192B580D0D0001212D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC04815E2B5A93290001212D /* ModelForCreateUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +293,23 @@
 			path = Localized;
 			sourceTree = "<group>";
 		};
+		AC0481552B5A89E70001212D /* CheckPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AC0481562B5A8A0F0001212D /* ValidatePassword.swift */,
+			);
+			path = CheckPassword;
+			sourceTree = "<group>";
+		};
+		AC04816D2B5E4E4A0001212D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AC04816E2B5E4E610001212D /* SignUpViewModel.swift */,
+				AC0481472B5947700001212D /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +326,9 @@
 			dependencies = (
 			);
 			name = StrongMom;
+			packageProductDependencies = (
+				AC0481632B5A940C0001212D /* Alamofire */,
+			);
 			productName = StrongMom;
 			productReference = AC0480D62B5733630001212D /* StrongMom.app */;
 			productType = "com.apple.product-type.application";
@@ -294,6 +357,9 @@
 				Base,
 			);
 			mainGroup = AC0480CD2B5733630001212D;
+			packageReferences = (
+				AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AC0480D72B5733630001212D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,14 +395,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */,
+				AC0481592B5A8B5D0001212D /* SecureTextField.swift in Sources */,
 				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
+				AC04814E2B5961E30001212D /* SocialMediaButton.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
+				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
+				AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
+				AC04814A2B5948290001212D /* BackButton.swift in Sources */,
+				AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */,
 				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
+				AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */,
 				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
+				AC0481482B5947700001212D /* SignUpView.swift in Sources */,
+				AC0481612B5A938B0001212D /* UserService.swift in Sources */,
 				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
+				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
+				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
+				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
+				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC0481632B5A940C0001212D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC0480CE2B5733630001212D /* Project object */;
 }
