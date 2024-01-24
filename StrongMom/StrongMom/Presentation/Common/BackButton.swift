@@ -14,7 +14,7 @@ struct BackButton: View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
         }, label: {
-            Image(Strings.backArrow)
+            Image(AssetNames.backArrow)
         })
         .foregroundColor(.customLightBlack)
 //        .padding(.trailing, 327)

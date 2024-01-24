@@ -60,18 +60,19 @@ struct SignUpView: View {
                             .padding(.bottom, 54)
                             
                             PrimaryButton(isValid: isValidInput(), text: Strings.continueWithEmail) {
-                                let modelForCreateUser = ModelForCreateUser(email: signUpViewModel.emailTextFieldText, password: signUpViewModel.passwordTextFieldText, passwordConfirmation: signUpViewModel.confirmPassword, timezone: TimeZone.current.identifier, acceptedPrivacyPolicy: signUpViewModel.acceptedPrivacyPolicy, acceptedTermsAndConditions: signUpViewModel.acceptedTermsAndConditions)
-                                print(modelForCreateUser)
-                                
-                                signUpViewModel.createUser(model: modelForCreateUser) { result in
-                                    switch result {
-                                    case .success(let userTokenResponse):
+                                signUpViewModel.createUser()
+                                    .sink(receiveCompletion: { completion in
+                                        switch completion {
+                                        case .finished:
+                                            break
+                                        case .failure(let error):
+                                            signUpViewModel.showAlert = true
+                                            alertMessage = Strings.failedToCreateUser + "\(error.localizedDescription)"
+                                        }
+                                    }, receiveValue: { userTokenResponse in
                                         print("Successfully created user: \(userTokenResponse)")
-                                    case .failure(let error):
-                                        signUpViewModel.showAlert = true
-                                        alertMessage = Strings.failedToCreateUser + "\(error.localizedDescription)"
-                                    }
-                                }
+                                    })
+                                    .store(in: &signUpViewModel.cancellables)
                             }
                             .padding(.horizontal, 20)
                             .padding(.bottom, 26)
@@ -89,9 +90,9 @@ struct SignUpView: View {
                                 .padding(.horizontal, 129)
                             
                             HStack(alignment: .center, spacing: 20, content: {
-                                SocialMediaButton(buttonImage: Strings.facebook) {}
-                                SocialMediaButton(buttonImage: Strings.google) {}
-                                SocialMediaButton(buttonImage: Strings.apple) {}
+                                SocialMediaButton(buttonImage: AssetNames.facebook) {}
+                                SocialMediaButton(buttonImage: AssetNames.google) {}
+                                SocialMediaButton(buttonImage: AssetNames.apple) {}
                             })
                             .padding(.top, 22)
                             .padding(.bottom, 26)
@@ -101,9 +102,9 @@ struct SignUpView: View {
                                     self.signUpViewModel.checkboxIsActive.toggle()
                                 }, label: {
                                     if signUpViewModel.checkboxIsActive {
-                                        Image(Strings.checkBoxOn)
+                                        Image(AssetNames.checkBoxOn)
                                     } else {
-                                        Image(Strings.checkBoxOff)
+                                        Image(AssetNames.checkBoxOff)
                                     }
                                 })
                                 AgreementButtonsView()
@@ -115,7 +116,15 @@ struct SignUpView: View {
                             Spacer()
                         }
                         .onAppear {
-                            signUpViewModel.fetchToken()
+                            signUpViewModel.fetchToken(completion: {result in
+                                switch result {
+                                case .success(let token):
+                                    print("Successfully created user: \(token)")
+                                case .failure(let error):
+                                    signUpViewModel.showAlert = true
+                                    alertMessage = Strings.failetToGetToken + "\(error.localizedDescription)"
+                                }
+                            })
                         }
                     }
                     .navigationBarItems(leading: BackButton())
@@ -134,4 +143,3 @@ struct SignUpView: View {
 #Preview {
     SignUpView()
 }
-

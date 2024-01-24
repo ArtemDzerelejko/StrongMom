@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 final class SignUpViewModel: ObservableObject {
     @Published var tokenResponse: TokenResponse?
@@ -26,35 +27,51 @@ final class SignUpViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var showErrorText = false
     
-    func fetchToken() {
+    var cancellables: Set<AnyCancellable> = []
+    
+    func fetchToken(completion: @escaping (Result<TokenResponse, Error>) -> Void) {
         authorizationUseCase.getAnonymousToken { result in
             switch result {
             case .success(let tokenResponse):
                 self.tokenResponse = tokenResponse
+                completion(.success(tokenResponse))
             case .failure(let error):
-                print("Failed to fetch token: \(error)")
-            }
-        }
-    }
-    
-    func createUser(model: ModelForCreateUser, completion: @escaping (Result<UserTokenResponse, Error>) -> Void) {
-        guard let token = tokenResponse?.token else {
-            print("Token not available. Make sure to fetch the token first.")
-            return
-        }
-        print(token)
-        
-        userUseCase.createUser(model: model, token: token) { result in
-            
-            switch result {
-            case .success(let userTokenResponse):
-                self.userTokenResponse = userTokenResponse
-                print("UserTokenResponse: \(userTokenResponse)")
-                completion(.success(userTokenResponse))
-            case .failure(let error):
-                print("Failed to fetch token: \(error.localizedDescription)")
                 completion(.failure(error))
             }
         }
     }
+    
+    func createUser() -> AnyPublisher<UserTokenResponse, Error> {
+            return Future<UserTokenResponse, Error> { promise in
+                guard let token = self.tokenResponse?.token else {
+                    print("Token not available. Make sure to fetch the token first.")
+                    promise(.failure(Error.self as! Error))
+                    return
+                }
+
+                let modelForCreateUser = ModelForCreateUser(
+                    email: self.emailTextFieldText,
+                    password: self.passwordTextFieldText,
+                    passwordConfirmation: self.confirmPassword,
+                    timezone: TimeZone.current.identifier,
+                    acceptedPrivacyPolicy: self.acceptedPrivacyPolicy,
+                    acceptedTermsAndConditions: self.acceptedTermsAndConditions
+                )
+
+                print(modelForCreateUser)
+
+                self.userUseCase.createUser(model: modelForCreateUser, token: token) { result in
+                    switch result {
+                    case .success(let userTokenResponse):
+                        self.userTokenResponse = userTokenResponse
+                        print("UserTokenResponse: \(userTokenResponse)")
+                        promise(.success(userTokenResponse))
+                    case .failure(let error):
+                        print("Failed to fetch token: \(error.localizedDescription)")
+                        promise(.failure(error))
+                    }
+                }
+            }
+            .eraseToAnyPublisher()
+        }
 }

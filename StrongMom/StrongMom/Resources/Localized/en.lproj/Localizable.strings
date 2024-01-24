@@ -15,6 +15,7 @@
 "continueWith" = "or continue with";
 "error" = "Error";
 "ok" = "Ok";
+"failetToGetToken" = "Failet to get token:";
 "failedToCreateUser" = "Failed to create user:";
 
 // MARK: - AgreementButtonsView

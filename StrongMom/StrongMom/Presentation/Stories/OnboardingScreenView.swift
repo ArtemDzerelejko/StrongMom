@@ -14,7 +14,7 @@ struct OnboardingScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Image(Strings.onboardingBackground)
+                Image(AssetNames.onboardingBackground)
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)

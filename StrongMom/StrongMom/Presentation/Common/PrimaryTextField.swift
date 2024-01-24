@@ -10,6 +10,7 @@ import SwiftUI
 struct PrimaryTextField: View {
     @Binding var text: String
     var placeholder: String
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         TextField(text: $text) {
@@ -17,6 +18,7 @@ struct PrimaryTextField: View {
                 .foregroundColor(.placeholder)
                 .font(AppFont.Caption1)
         }
+        .focused($isFocused)
         .autocapitalization(.none)
         .padding()
         .frame(height: 42)
@@ -26,6 +28,10 @@ struct PrimaryTextField: View {
                 Color.border, lineWidth: 1
             )
         )
+        .onTapGesture {
+            isFocused = true
+        }
         .font(AppFont.Caption1)
+        
     }
 }

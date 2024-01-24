@@ -18,7 +18,7 @@ struct SplashScreenView: View {
                 Color.customPurple.ignoresSafeArea()
                 VStack {
                     Spacer()
-                    Image(Strings.mainLogo)
+                    Image(AssetNames.mainLogo)
                         .frame(width: 162.18, height: 205.2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     Spacer()
                 }

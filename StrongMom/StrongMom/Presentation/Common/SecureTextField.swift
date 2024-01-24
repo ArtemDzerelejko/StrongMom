@@ -10,6 +10,8 @@ import SwiftUI
 struct SecureTextField: View {
     @Binding var text: String
     var placeholder: String
+    @FocusState private var isFocused: Bool
+    
     
     var body: some View {
         SecureField(text: $text) {
@@ -17,6 +19,7 @@ struct SecureTextField: View {
                 .foregroundColor(.placeholder)
                 .font(AppFont.Caption1)
         }
+        .focused($isFocused)
         .autocapitalization(.none)
         .padding()
         .frame(height: 42, alignment: .center)
@@ -25,6 +28,9 @@ struct SecureTextField: View {
                 Color.border, lineWidth: 1
             )
         )
+        .onTapGesture {
+            isFocused = true
+        }
         .font(AppFont.Caption1)
     }
 }

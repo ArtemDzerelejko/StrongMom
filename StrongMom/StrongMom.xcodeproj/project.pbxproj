@@ -48,6 +48,8 @@
 		AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */; };
 		AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE802B5FE38000684507 /* HeaderView.swift */; };
 		AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE822B5FE4F300684507 /* BaseService.swift */; };
+		AC39FE992B614B4500684507 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AC39FE982B614B4500684507 /* CombineCocoa */; };
+		AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE9A2B6155EC00684507 /* AssetNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,7 @@
 		AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
 		AC39FE802B5FE38000684507 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AC39FE822B5FE4F300684507 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AC39FE9A2B6155EC00684507 /* AssetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC39FE992B614B4500684507 /* CombineCocoa in Frameworks */,
 				AC0481642B5A940C0001212D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0481362B5834C30001212D /* Strings.swift */,
+				AC39FE9A2B6155EC00684507 /* AssetNames.swift */,
 				AC0481442B5916860001212D /* Localized */,
 				AC0480DD2B5733650001212D /* Assets.xcassets */,
 				AC0480F82B57EF1B0001212D /* Font */,
@@ -349,6 +354,7 @@
 			name = StrongMom;
 			packageProductDependencies = (
 				AC0481632B5A940C0001212D /* Alamofire */,
+				AC39FE982B614B4500684507 /* CombineCocoa */,
 			);
 			productName = StrongMom;
 			productReference = AC0480D62B5733630001212D /* StrongMom.app */;
@@ -381,6 +387,7 @@
 			packageReferences = (
 				AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AC39FE942B6132BC00684507 /* XCRemoteSwiftPackageReference "NavigationStack" */,
+				AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = AC0480D72B5733630001212D /* Products */;
 			projectDirPath = "";
@@ -428,6 +435,7 @@
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
 				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
 				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
+				AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */,
 				AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
 				AC04814A2B5948290001212D /* BackButton.swift in Sources */,
@@ -696,6 +704,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -703,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		AC39FE982B614B4500684507 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
