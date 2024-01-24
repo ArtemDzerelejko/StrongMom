@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    
+    // MARK: - Private properties
     @State private var isActive = false
     
     var body: some View {
@@ -15,9 +17,13 @@ struct SplashScreenView: View {
             OnboardingScreenView()
         } else {
             ZStack {
+                
+                // MARK: - Setup background
                 Color.customPurple.ignoresSafeArea()
                 VStack {
                     Spacer()
+                    
+                    // MARK: - Main Logo Image
                     Image(AssetNames.mainLogo)
                         .frame(width: 162.18, height: 205.2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     Spacer()

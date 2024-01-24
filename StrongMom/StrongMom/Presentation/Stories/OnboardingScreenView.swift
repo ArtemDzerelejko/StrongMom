@@ -7,19 +7,24 @@
 
 import SwiftUI
 
-import NavigationStack
 struct OnboardingScreenView: View {
+    
+    // MARK: - Public properties
     @State var showScreen: Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
+                
+                // MARK: - Setup background image
                 Image(AssetNames.onboardingBackground)
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
+                    
+                    // MARK: - Welcome Text
                     Text(Strings.welcomeText)
                         .font(AppFont.Headline1)
                         .foregroundColor(.white)
@@ -27,6 +32,7 @@ struct OnboardingScreenView: View {
                         .padding(.trailing, 82)
                         .padding(.bottom, 133)
                     
+                    // MARK: - Create Account Button
                     PrimaryButton(isValid: true, text: Strings.createAccount) {
                         showScreen.toggle()
                     }
@@ -36,6 +42,7 @@ struct OnboardingScreenView: View {
                     }
                     .padding(35)
                     
+                    // MARK: - Custom Link Button
                     CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {
                         print("Button tapped!")
                     }

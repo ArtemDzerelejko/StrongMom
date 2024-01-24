@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackButton: View {
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
@@ -17,9 +17,5 @@ struct BackButton: View {
             Image(AssetNames.backArrow)
         })
         .foregroundColor(.customLightBlack)
-//        .padding(.trailing, 327)
-//        .padding(.leading, 20)
-//        .frame(maxWidth: .infinity,alignment: .leading)
-//        .frame(alignment: .topLeading)
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - ModelForCreateUserRemote
 struct ModelForCreateUserRemote: Codable {
     var email: String
     var password: String

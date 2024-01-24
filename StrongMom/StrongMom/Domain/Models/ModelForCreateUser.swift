@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - ModelForCreateUser
 struct ModelForCreateUser: Codable {
     var email: String
     var password: String
@@ -16,11 +17,13 @@ struct ModelForCreateUser: Codable {
     var acceptedTermsAndConditions: Bool
 }
 
+// MARK: - TokenResponse
 struct TokenResponse: Codable {
     let token: String
     let refreshToken: String
 }
 
+// MARK: - UserTokenResponse
 struct UserTokenResponse: Codable {
     let userToken: String
     let userRefreshToken: String

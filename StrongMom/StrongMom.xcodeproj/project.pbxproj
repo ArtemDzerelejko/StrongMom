@@ -48,7 +48,6 @@
 		AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */; };
 		AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE802B5FE38000684507 /* HeaderView.swift */; };
 		AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE822B5FE4F300684507 /* BaseService.swift */; };
-		AC39FE992B614B4500684507 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AC39FE982B614B4500684507 /* CombineCocoa */; };
 		AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE9A2B6155EC00684507 /* AssetNames.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC39FE992B614B4500684507 /* CombineCocoa in Frameworks */,
 				AC0481642B5A940C0001212D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +352,6 @@
 			name = StrongMom;
 			packageProductDependencies = (
 				AC0481632B5A940C0001212D /* Alamofire */,
-				AC39FE982B614B4500684507 /* CombineCocoa */,
 			);
 			productName = StrongMom;
 			productReference = AC0480D62B5733630001212D /* StrongMom.app */;
@@ -600,7 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 7A3H3B82LM;
+				DEVELOPMENT_TEAM = R4ADZKUSDW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
@@ -636,7 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 7A3H3B82LM;
+				DEVELOPMENT_TEAM = R4ADZKUSDW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
@@ -719,11 +716,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		AC39FE982B614B4500684507 /* CombineCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
-			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

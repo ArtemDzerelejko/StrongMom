@@ -35,4 +35,3 @@ struct CustomLinkButtonWithText: View {
         .font(AppFont.Body1)
     }
 }
-

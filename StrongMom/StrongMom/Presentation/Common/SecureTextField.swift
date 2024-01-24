@@ -22,7 +22,8 @@ struct SecureTextField: View {
         .focused($isFocused)
         .autocapitalization(.none)
         .padding()
-        .frame(height: 42, alignment: .center)
+        .keyboardType(.emailAddress)
+        .frame(height: 42)
         .overlay(RoundedRectangle(cornerRadius: 21)
             .stroke(
                 Color.border, lineWidth: 1
