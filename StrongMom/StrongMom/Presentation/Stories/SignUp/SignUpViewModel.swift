@@ -7,13 +7,27 @@
 
 import SwiftUI
 
-class SignUpViewModel: ObservableObject {
+final class SignUpViewModel: ObservableObject {
     @Published var tokenResponse: TokenResponse?
+    private let authorizationUseCase = AuthorizationUseCase()
+    
     @Published var userTokenResponse: UserTokenResponse?
     private let userUseCase = UserUseCase()
     
+    @Published var emailTextFieldText: String = ""
+    @Published var passwordTextFieldText: String = ""
+    @Published var confirmPassword: String = ""
+    @Published var checkboxIsActive = false
+    @Published var isPasswordValid = false
+    @Published var isPasswordMatchValid = false
+    @Published var acceptedPrivacyPolicy = true
+    @Published var acceptedTermsAndConditions = true
+    @Published var buttonInValid = false
+    @Published var showAlert = false
+    @Published var showErrorText = false
+    
     func fetchToken() {
-        userUseCase.getToken { result in
+        authorizationUseCase.getAnonymousToken { result in
             switch result {
             case .success(let tokenResponse):
                 self.tokenResponse = tokenResponse

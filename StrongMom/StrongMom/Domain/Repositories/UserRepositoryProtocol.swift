@@ -8,6 +8,5 @@
 import Foundation
 
 protocol UserRepositoryProtocol {
-    func getToken(completion: @escaping (Result<TokenResponse, Error>) -> Void)
     func createUser(model: ModelForCreateUser, token: String, completion: @escaping (Result<UserTokenResponse, Error>) -> Void)
 }

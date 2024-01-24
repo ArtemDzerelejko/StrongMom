@@ -21,7 +21,7 @@ struct CustomLinkButtonWithText: View {
     }
     
     var body: some View {
-        HStack {
+        HStack(spacing: 6) {
             Text(text)
                 .foregroundColor(textColor)
             Button(action: {

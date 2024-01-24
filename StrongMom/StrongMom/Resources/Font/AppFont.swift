@@ -29,7 +29,7 @@ enum Montserraat: String {
     case light = "Montserrat-Light"
     case medium = "Montserrat-Medium"
     case regular = "Montserrat-Regular"
-    case semiBold = "Montserrat_SemiBold"
+    case semiBold = "Montserrat-SemiBold"
     case thin = "Montserrat-Thin"
     
     var weight: String {return self.rawValue}

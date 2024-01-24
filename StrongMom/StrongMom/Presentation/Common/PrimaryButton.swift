@@ -10,14 +10,12 @@ import SwiftUI
 struct PrimaryButton: View {
     let isValid: Bool
     let buttonText: String
-    let buttonSize: CGSize
     let action: () -> Void
     
     
-    init(isValid: Bool?, text: String, size: CGSize, action: @escaping () -> Void) {
+    init(isValid: Bool?, text: String, action: @escaping () -> Void) {
         self.isValid = isValid ?? true
         self.buttonText = text
-        self.buttonSize = size
         self.action = action
     }
     
@@ -29,7 +27,7 @@ struct PrimaryButton: View {
                 .font(AppFont.Body1)
                 .foregroundColor(isValid ? Color.white : Color.customGray)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .frame(width: buttonSize.width, height: buttonSize.height)
+                .frame(height: 46)
                 .background(isValid ? Color.customPurple : Color.customDarkGray)
                 .cornerRadius(23)
         })

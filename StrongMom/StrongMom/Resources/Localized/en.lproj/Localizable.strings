@@ -10,8 +10,8 @@
 "password" = "Password";
 "confirmPassword" = "Confirm password";
 "passwordRules" = "Password must include: at least 8 characters with\nuppercase and number";
-"passwordMismatch" = "Password Mismatch";
-"continueWithEmail" = "Continue with Email";
+"passwordMismatch" = "Password mismatch";
+"continueWithEmail" = "Continue with email";
 "continueWith" = "or continue with";
 "error" = "Error";
 "ok" = "Ok";

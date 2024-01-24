@@ -10,17 +10,6 @@ import Foundation
 final class UserRepository: UserRepositoryProtocol {
     private let userService = UserService()
     
-    func getToken(completion: @escaping (Result<TokenResponse, Error>) -> Void) {
-        userService.getToken { result in
-            switch result {
-            case .success(let result):
-                completion(.success(result))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
     func createUser(model: ModelForCreateUser, token: String, completion: @escaping (Result<UserTokenResponse, Error>) -> Void) {
         userService.createUser(model: model, token: token) { result in
             switch result {
@@ -31,5 +20,4 @@ final class UserRepository: UserRepositoryProtocol {
             }
         }
     }
-    
 }

@@ -41,6 +41,13 @@
 		AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481692B5AB2730001212D /* UserRepository.swift */; };
 		AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816B2B5AB2B50001212D /* UserUseCase.swift */; };
 		AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816E2B5E4E610001212D /* SignUpViewModel.swift */; };
+		AC39FE742B5FD2D500684507 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE732B5FD2D500684507 /* APIEndpoint.swift */; };
+		AC39FE762B5FD36400684507 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE752B5FD36400684507 /* AuthorizationService.swift */; };
+		AC39FE782B5FD64F00684507 /* AuthorizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE772B5FD64F00684507 /* AuthorizationRepository.swift */; };
+		AC39FE7A2B5FD68100684507 /* AuthorizationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE792B5FD68100684507 /* AuthorizationRepositoryProtocol.swift */; };
+		AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */; };
+		AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE802B5FE38000684507 /* HeaderView.swift */; };
+		AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE822B5FE4F300684507 /* BaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +86,13 @@
 		AC0481692B5AB2730001212D /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AC04816B2B5AB2B50001212D /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		AC04816E2B5E4E610001212D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		AC39FE732B5FD2D500684507 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		AC39FE752B5FD36400684507 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		AC39FE772B5FD64F00684507 /* AuthorizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepository.swift; sourceTree = "<group>"; };
+		AC39FE792B5FD68100684507 /* AuthorizationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepositoryProtocol.swift; sourceTree = "<group>"; };
+		AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
+		AC39FE802B5FE38000684507 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		AC39FE822B5FE4F300684507 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +201,7 @@
 				AC0481582B5A8B5D0001212D /* SecureTextField.swift */,
 				AC04814D2B5961E30001212D /* SocialMediaButton.swift */,
 				AC0481512B5A87530001212D /* AgreementButtonsView.swift */,
+				AC39FE802B5FE38000684507 /* HeaderView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -215,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0481692B5AB2730001212D /* UserRepository.swift */,
+				AC39FE772B5FD64F00684507 /* AuthorizationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -230,7 +246,10 @@
 		AC0481152B580C730001212D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AC39FE732B5FD2D500684507 /* APIEndpoint.swift */,
+				AC39FE822B5FE4F300684507 /* BaseService.swift */,
 				AC0481602B5A938B0001212D /* UserService.swift */,
+				AC39FE752B5FD36400684507 /* AuthorizationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -249,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				AC04816B2B5AB2B50001212D /* UserUseCase.swift */,
+				AC39FE7B2B5FD74A00684507 /* AuthorizationUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -257,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */,
+				AC39FE792B5FD68100684507 /* AuthorizationRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -359,6 +380,7 @@
 			mainGroup = AC0480CD2B5733630001212D;
 			packageReferences = (
 				AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC39FE942B6132BC00684507 /* XCRemoteSwiftPackageReference "NavigationStack" */,
 			);
 			productRefGroup = AC0480D72B5733630001212D /* Products */;
 			projectDirPath = "";
@@ -397,18 +419,24 @@
 			files = (
 				AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */,
 				AC0481592B5A8B5D0001212D /* SecureTextField.swift in Sources */,
+				AC39FE782B5FD64F00684507 /* AuthorizationRepository.swift in Sources */,
+				AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */,
+				AC39FE742B5FD2D500684507 /* APIEndpoint.swift in Sources */,
 				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
 				AC04814E2B5961E30001212D /* SocialMediaButton.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
+				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
 				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
 				AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
 				AC04814A2B5948290001212D /* BackButton.swift in Sources */,
 				AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */,
+				AC39FE7A2B5FD68100684507 /* AuthorizationRepositoryProtocol.swift in Sources */,
 				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
 				AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */,
+				AC39FE762B5FD36400684507 /* AuthorizationService.swift in Sources */,
 				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
 				AC0481482B5947700001212D /* SignUpView.swift in Sources */,
 				AC0481612B5A938B0001212D /* UserService.swift in Sources */,
@@ -417,6 +445,7 @@
 				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
+				AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -545,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -567,12 +596,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = STRONGMom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,12 +632,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = STRONGMom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,6 +686,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.8.1;
+			};
+		};
+		AC39FE942B6132BC00684507 /* XCRemoteSwiftPackageReference "NavigationStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/indieSoftware/NavigationStack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

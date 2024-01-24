@@ -17,9 +17,9 @@ struct BackButton: View {
             Image(Strings.backArrow)
         })
         .foregroundColor(.customLightBlack)
-        .padding(.trailing, 327)
-        .padding(.leading, 20)
-        .frame(maxWidth: .infinity,alignment: .leading)
+//        .padding(.trailing, 327)
+//        .padding(.leading, 20)
+//        .frame(maxWidth: .infinity,alignment: .leading)
 //        .frame(alignment: .topLeading)
     }
 }

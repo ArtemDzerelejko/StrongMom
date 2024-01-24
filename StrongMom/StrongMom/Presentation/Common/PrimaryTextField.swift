@@ -11,22 +11,20 @@ struct PrimaryTextField: View {
     @Binding var text: String
     var placeholder: String
     
-    
     var body: some View {
         TextField(text: $text) {
             Text(placeholder)
-                .foregroundColor(.gray)
+                .foregroundColor(.placeholder)
                 .font(AppFont.Caption1)
         }
+        .autocapitalization(.none)
         .padding()
-        .frame(width: 335, height: 42, alignment: .center)
-        .background(
-            Color.white
-                .overlay(RoundedRectangle(cornerRadius: 21)
-                    .stroke(
-                        Color.customLightBlack, lineWidth: 1
-                    )
-                )
+        .frame(height: 42)
+        .keyboardType(.emailAddress)
+        .overlay(RoundedRectangle(cornerRadius: 21)
+            .stroke(
+                Color.border, lineWidth: 1
+            )
         )
         .font(AppFont.Caption1)
     }

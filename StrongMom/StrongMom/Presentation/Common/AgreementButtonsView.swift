@@ -14,7 +14,7 @@ private struct Constans {
 
 struct AgreementButtonsView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 2.5) {
             Text(Strings.iAgreeToThe)
             Button(action: {
                 guard let url = URL(string: Constans.termsAndConditionUrl) else { return }
