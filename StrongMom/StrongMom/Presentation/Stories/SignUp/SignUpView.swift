@@ -72,12 +72,12 @@ struct SignUpView: View {
                         .padding(.bottom, 54)
                         
                         // MARK: - Continue Button Section
-                        PrimaryButton(isValid: isValidInput(), text: Strings.continueWithEmail) {
+                        PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail) {
                             signUpViewModel.action.send(.createUser)
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 26)
-                        .disabled(!isValidInput())
+                        .disabled(!signUpViewModel.isValidInput())
                         .alert(isPresented: $signUpViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
                                   message: Text(alertMessage),
@@ -119,15 +119,7 @@ struct SignUpView: View {
                     
                     // MARK: - On Appear Section
                     .onAppear {
-                        signUpViewModel.fetchToken(completion: {result in
-                            switch result {
-                            case .success(let token):
-                                print("Successfully created token: \(token)")
-                            case .failure(let error):
-                                signUpViewModel.showAlert = true
-                                alertMessage = Strings.failetToGetToken + "\(error.localizedDescription)"
-                            }
-                        })
+                        signUpViewModel.action.send(.fetchToken)
                         setupSubscriber()
                     }
                     
@@ -138,14 +130,6 @@ struct SignUpView: View {
     }
     
     // MARK: - Helper Methods
-    private func isValidInput() -> Bool {
-        let isEmailValid = !signUpViewModel.emailTextFieldText.isEmpty
-        let isPasswordValid = !signUpViewModel.passwordTextFieldText.isEmpty
-        let isConfirmPasswordValid = !signUpViewModel.confirmPassword.isEmpty && signUpViewModel.confirmPassword == signUpViewModel.passwordTextFieldText
-        let isCheckboxActive = signUpViewModel.checkboxIsActive
-        return isEmailValid && isPasswordValid && isConfirmPasswordValid && isCheckboxActive
-    }
-    
     private func setupSubscriber() {
         subscriber = signUpViewModel.output
             .sink { [self] output in

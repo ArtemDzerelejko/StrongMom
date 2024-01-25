@@ -383,8 +383,6 @@
 			mainGroup = AC0480CD2B5733630001212D;
 			packageReferences = (
 				AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */,
-				AC39FE942B6132BC00684507 /* XCRemoteSwiftPackageReference "NavigationStack" */,
-				AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = AC0480D72B5733630001212D /* Products */;
 			projectDirPath = "";
@@ -691,22 +689,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.8.1;
-			};
-		};
-		AC39FE942B6132BC00684507 /* XCRemoteSwiftPackageReference "NavigationStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/indieSoftware/NavigationStack.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.1;
-			};
-		};
-		AC39FE972B614B4500684507 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

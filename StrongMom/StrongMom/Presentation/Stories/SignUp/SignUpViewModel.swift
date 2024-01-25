@@ -7,13 +7,14 @@
 
 import SwiftUI
 import Combine
+import RegexBuilder
 
 final class SignUpViewModel: ObservableObject {
     
     // MARK: - Public properties
     @Published var tokenResponse: TokenResponse?
     @Published var userTokenResponse: UserTokenResponse?
-   
+    
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
     @Published var confirmPassword: String = ""
@@ -26,9 +27,12 @@ final class SignUpViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var showErrorText = false
     
+    static let word = OneOrMore(.word)
+    
     var cancellables: Set<AnyCancellable> = []
     
     enum Action {
+        case fetchToken
         case createUser
     }
     
@@ -42,6 +46,23 @@ final class SignUpViewModel: ObservableObject {
     // MARK: - Private properties
     private let authorizationUseCase = AuthorizationUseCase()
     private let userUseCase = UserUseCase()
+    private let emailPattern = Regex {
+        Capture {
+            ZeroOrMore {
+                word
+                "."
+            }
+            word
+        }
+        "@"
+        Capture {
+            word
+            OneOrMore {
+                "."
+                word
+            }
+        }
+    }
     
     // MARK: - Init
     init() {
@@ -51,22 +72,43 @@ final class SignUpViewModel: ObservableObject {
                 switch action {
                 case .createUser:
                     self.createUser()
+                case .fetchToken:
+                    self.fetchToken()
                 }
             }
             .store(in: &cancellables)
     }
     
+    // MARK: - Check valid email
+    private func isValidEmail() -> Bool {
+        return emailTextFieldText.firstMatch(of: emailPattern) != nil
+    }
+    
+    // MARK: - Check valid input
+    func isValidInput() -> Bool {
+        let isEmailValid = self.isValidEmail()
+        let isPasswordValid = ValidatePassword.validatePassword(self.passwordTextFieldText)
+        let isConfirmPasswordValid = !self.confirmPassword.isEmpty && self.confirmPassword == self.passwordTextFieldText
+        let isCheckboxActive = self.checkboxIsActive
+        return isEmailValid && isPasswordValid && isConfirmPasswordValid && isCheckboxActive
+    }
+    
     // MARK: - Fetch Token
-    func fetchToken(completion: @escaping (Result<TokenResponse, Error>) -> Void) {
-        authorizationUseCase.getAnonymousToken { result in
-            switch result {
-            case .success(let tokenResponse):
-                self.tokenResponse = tokenResponse
-                completion(.success(tokenResponse))
-            case .failure(let error):
-                completion(.failure(error))
+    func fetchToken() -> AnyPublisher<TokenResponse, Error> {
+        return Future<TokenResponse, Error> { promise in
+            self.authorizationUseCase.getAnonymousToken { result in
+                switch result {
+                case .success(let tokenResponse):
+                    self.tokenResponse = tokenResponse
+                    print("Token response: \(tokenResponse)")
+                    promise(.success(tokenResponse))
+                case .failure(let error):
+                    print("Failed to get token response: \(error.localizedDescription)")
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
+        .eraseToAnyPublisher()
     }
     
     // MARK: - Create User

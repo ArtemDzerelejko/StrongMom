@@ -8,24 +8,6 @@
         "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
         "version" : "5.8.1"
       }
-    },
-    {
-      "identity" : "combinecocoa",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/CombineCommunity/CombineCocoa.git",
-      "state" : {
-        "revision" : "7300c75ff9e072aa7fd0fccefcc88f74aae9bf56",
-        "version" : "0.4.1"
-      }
-    },
-    {
-      "identity" : "navigationstack",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/indieSoftware/NavigationStack.git",
-      "state" : {
-        "revision" : "900b75924f218a68c2487ab8a9c3fc7c42130705",
-        "version" : "1.1.1"
-      }
     }
   ],
   "version" : 2
