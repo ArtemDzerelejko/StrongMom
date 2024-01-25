@@ -49,6 +49,7 @@
 		AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE802B5FE38000684507 /* HeaderView.swift */; };
 		AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE822B5FE4F300684507 /* BaseService.swift */; };
 		AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE9A2B6155EC00684507 /* AssetNames.swift */; };
+		AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB052B629B9D00969EF3 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		AC39FE802B5FE38000684507 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AC39FE822B5FE4F300684507 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AC39FE9A2B6155EC00684507 /* AssetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetNames.swift; sourceTree = "<group>"; };
+		AC40FB052B629B9D00969EF3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0481452B5916C50001212D /* Localizable+Extensions.swift */,
+				AC40FB052B629B9D00969EF3 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
 				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
+				AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
 				AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */,
 			);

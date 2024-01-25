@@ -26,9 +26,8 @@ final class SignUpViewModel: ObservableObject {
     @Published var buttonInValid = false
     @Published var showAlert = false
     @Published var showErrorText = false
-    
-    static let word = OneOrMore(.word)
-    
+    @Published var valueForAnimation = 0
+        
     var cancellables: Set<AnyCancellable> = []
     
     enum Action {
@@ -46,23 +45,6 @@ final class SignUpViewModel: ObservableObject {
     // MARK: - Private properties
     private let authorizationUseCase = AuthorizationUseCase()
     private let userUseCase = UserUseCase()
-    private let emailPattern = Regex {
-        Capture {
-            ZeroOrMore {
-                word
-                "."
-            }
-            word
-        }
-        "@"
-        Capture {
-            word
-            OneOrMore {
-                "."
-                word
-            }
-        }
-    }
     
     // MARK: - Init
     init() {
@@ -78,19 +60,10 @@ final class SignUpViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    // MARK: - Check valid email
-    private func isValidEmail() -> Bool {
-        guard let match = emailTextFieldText.firstMatch(of: emailPattern) else { return false }
-        let (wholeMatch, name, domain) = match.output
-        guard wholeMatch == emailTextFieldText else { return false }
-        if name.count < 3 || domain.count < 3 { return false }
-        return true
-    }
-    
+        
     // MARK: - Check valid input
     func isValidInput() -> Bool {
-        let isEmailValid = self.isValidEmail()
+        let isEmailValid = emailTextFieldText.isValidEmail()
         let isPasswordValid = ValidatePassword.validatePassword(self.passwordTextFieldText)
         let isConfirmPasswordValid = !self.confirmPassword.isEmpty && self.confirmPassword == self.passwordTextFieldText
         let isCheckboxActive = self.checkboxIsActive
@@ -98,55 +71,47 @@ final class SignUpViewModel: ObservableObject {
     }
     
     // MARK: - Fetch Token
-    func fetchToken() -> AnyPublisher<TokenResponse, Error> {
-        return Future<TokenResponse, Error> { promise in
-            self.authorizationUseCase.getAnonymousToken { result in
-                switch result {
-                case .success(let tokenResponse):
-                    self.tokenResponse = tokenResponse
-                    print("Token response: \(tokenResponse)")
-                    promise(.success(tokenResponse))
-                case .failure(let error):
-                    print("Failed to get token response: \(error.localizedDescription)")
-                    self.output.send(.showErrorAlert(error: error.localizedDescription))
-                }
+    func fetchToken() {
+        self.authorizationUseCase.getAnonymousToken { result in
+            switch result {
+            case .success(let tokenResponse):
+                self.tokenResponse = tokenResponse
+                print("Token response: \(tokenResponse)")
+            case .failure(let error):
+                print("Failed to get token response: \(error.localizedDescription)")
+                self.output.send(.showErrorAlert(error: error.localizedDescription))
             }
         }
-        .eraseToAnyPublisher()
     }
     
     // MARK: - Create User
-    func createUser() -> AnyPublisher<UserTokenResponse, Error> {
-        return Future<UserTokenResponse, Error> { promise in
-            guard let token = self.tokenResponse?.token else {
-                print("Token not available. Make sure to fetch the token first.")
-                self.output.send(.showErrorAlert(error: "\(Error.self)"))
-                return
-            }
-            
-            let modelForCreateUser = ModelForCreateUser(
-                email: self.emailTextFieldText,
-                password: self.passwordTextFieldText,
-                passwordConfirmation: self.confirmPassword,
-                timezone: TimeZone.current.identifier,
-                acceptedPrivacyPolicy: self.acceptedPrivacyPolicy,
-                acceptedTermsAndConditions: self.acceptedTermsAndConditions
-            )
-            
-            print(modelForCreateUser)
-            
-            self.userUseCase.createUser(model: modelForCreateUser, token: token) { result in
-                switch result {
-                case .success(let userTokenResponse):
-                    self.userTokenResponse = userTokenResponse
-                    print("UserTokenResponse: \(userTokenResponse)")
-                    promise(.success(userTokenResponse))
-                case .failure(let error):
-                    print("Failed to fetch token: \(error.localizedDescription)")
-                    self.output.send(.showErrorAlert(error: error.localizedDescription))
-                }
+    func createUser() {
+        guard let token = self.tokenResponse?.token else {
+            print("Token not available. Make sure to fetch the token first.")
+            self.output.send(.showErrorAlert(error: "\(Error.self)"))
+            return
+        }
+        
+        let modelForCreateUser = ModelForCreateUser(
+            email: self.emailTextFieldText,
+            password: self.passwordTextFieldText,
+            passwordConfirmation: self.confirmPassword,
+            timezone: TimeZone.current.identifier,
+            acceptedPrivacyPolicy: self.acceptedPrivacyPolicy,
+            acceptedTermsAndConditions: self.acceptedTermsAndConditions
+        )
+        
+        print(modelForCreateUser)
+        
+        self.userUseCase.createUser(model: modelForCreateUser, token: token) { result in
+            switch result {
+            case .success(let userTokenResponse):
+                self.userTokenResponse = userTokenResponse
+                print("UserTokenResponse: \(userTokenResponse)")
+            case .failure(let error):
+                print("Failed to fetch token: \(error.localizedDescription)")
+                self.output.send(.showErrorAlert(error: error.localizedDescription))
             }
         }
-        .eraseToAnyPublisher()
     }
 }

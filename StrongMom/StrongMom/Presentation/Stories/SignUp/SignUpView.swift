@@ -67,7 +67,7 @@ struct SignUpView: View {
                                 .padding(.leading, 30)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .opacity(signUpViewModel.passwordTextFieldText != signUpViewModel.confirmPassword ? 1 : 0)
-                                .animation(.easeInOut(duration: 0.3))
+                                .animation(.easeInOut(duration: 0.3), value: signUpViewModel.valueForAnimation)
                         })
                         .padding(.bottom, 54)
                         
