@@ -81,7 +81,11 @@ final class SignUpViewModel: ObservableObject {
     
     // MARK: - Check valid email
     private func isValidEmail() -> Bool {
-        return emailTextFieldText.firstMatch(of: emailPattern) != nil
+        guard let match = emailTextFieldText.firstMatch(of: emailPattern) else { return false }
+        let (wholeMatch, name, domain) = match.output
+        guard wholeMatch == emailTextFieldText else { return false }
+        if name.count < 3 || domain.count < 3 { return false }
+        return true
     }
     
     // MARK: - Check valid input
