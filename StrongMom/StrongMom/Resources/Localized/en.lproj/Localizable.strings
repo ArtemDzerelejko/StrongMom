@@ -3,3 +3,23 @@
 "createAccount" = "Create account";
 "haveAccount" = "Already have an account?";
 "logIn" = "Log In";
+
+// MARK: - SignUpView
+"createAnAccount" = "Create\nan account";
+"email" = "Email";
+"password" = "Password";
+"confirmPassword" = "Confirm password";
+"passwordRules" = "Password must include: at least 8 characters with\nuppercase and number";
+"passwordMismatch" = "Password mismatch";
+"continueWithEmail" = "Continue with email";
+"continueWith" = "or continue with";
+"error" = "Error";
+"ok" = "Ok";
+"failetToGetToken" = "Failet to get token:";
+"failedToCreateUser" = "Failed to create user:";
+
+// MARK: - AgreementButtonsView
+"iAgreeToThe" = "I agree to the";
+"termsAndCondition" = "Term & Condition";
+"and" = "and";
+"privacyPolicy" = "Privacy Policy";

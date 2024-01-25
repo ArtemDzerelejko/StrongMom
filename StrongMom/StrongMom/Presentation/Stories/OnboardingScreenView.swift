@@ -9,31 +9,46 @@ import SwiftUI
 
 struct OnboardingScreenView: View {
     
+    // MARK: - Public properties
+    @State var showScreen: Bool = false
+    
     var body: some View {
-        ZStack {
-            Image(Strings.onboardingBackground)
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                Text(Strings.welcomeText)
-                    .font(AppFont.Headline1)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.leading)
-                    .padding(.trailing, 82)
-                    .padding(.bottom, 133)
+        NavigationView {
+            ZStack {
                 
-                PrimaryButton(text: Strings.createAccount, size: CGSize(width: 305, height: 46)) {
-                    print("Button press")
-                }
+                // MARK: - Setup background image
+                Image(AssetNames.onboardingBackground)
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    
+                    // MARK: - Welcome Text
+                    Text(Strings.welcomeText)
+                        .font(AppFont.Headline1)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                        .padding(.trailing, 82)
+                        .padding(.bottom, 133)
+                    
+                    // MARK: - Create Account Button
+                    PrimaryButton(isValid: true, text: Strings.createAccount) {
+                        showScreen.toggle()
+                    }
+                    
+                    .fullScreenCover(isPresented: $showScreen) {
+                        SignUpView()
+                    }
                     .padding(35)
-                
-                CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn) {
-                    print("Button tapped!")
+                    
+                    // MARK: - Custom Link Button
+                    CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {
+                        print("Button tapped!")
+                    }
+                    .padding(.leading, 69)
+                    .padding(.trailing, 69)
                 }
-                .padding(.leading, 69)
-                .padding(.trailing, 69)
             }
         }
     }

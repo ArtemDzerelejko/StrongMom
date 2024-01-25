@@ -10,18 +10,20 @@ import SwiftUI
 struct CustomLinkButtonWithText: View {
     let text: String
     let linkText: String
+    let textColor: Color
     let onTapAction: () -> Void
     
-    init(text: String, linkText: String, onTapAction: @escaping () -> Void) {
+    init(text: String, linkText: String, textColor: Color, onTapAction: @escaping () -> Void) {
         self.text = text
         self.linkText = linkText
+        self.textColor = textColor
         self.onTapAction = onTapAction
     }
     
     var body: some View {
-        HStack {
+        HStack(spacing: 6) {
             Text(text)
-                .foregroundColor(.white)
+                .foregroundColor(textColor)
             Button(action: {
                 onTapAction()
             }) {
@@ -33,4 +35,3 @@ struct CustomLinkButtonWithText: View {
         .font(AppFont.Body1)
     }
 }
-
