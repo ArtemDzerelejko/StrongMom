@@ -15,7 +15,7 @@ struct SocialMediaButton: View {
         self.buttonImage = buttonImage
         self.action = action
     }
-
+    
     var body: some View {
         Button(action: {
             action()

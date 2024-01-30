@@ -13,4 +13,12 @@ final class UserUseCase {
     func createUser(model: ModelForCreateUser, token: String, completion: @escaping (Result<UserTokenResponse, Error>) -> Void) {
         userRepository.createUser(model: model, token: token, completion: completion)
     }
+    
+    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserResponse, Error>) -> Void) {
+        userRepository.logInUser(model: model, anonymousToken: anonymousToken, completion: completion)
+    }
+    
+    func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        userRepository.resetPassword(email: email, anonymousToken: anonymousToken, completion: completion)
+    }
 }

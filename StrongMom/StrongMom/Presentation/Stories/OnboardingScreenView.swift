@@ -44,7 +44,7 @@ struct OnboardingScreenView: View {
                     
                     // MARK: - Custom Link Button
                     CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {
-                        print("Button tapped!")
+
                     }
                     .padding(.leading, 69)
                     .padding(.trailing, 69)

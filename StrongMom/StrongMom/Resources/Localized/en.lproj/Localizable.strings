@@ -23,3 +23,36 @@
 "termsAndCondition" = "Term & Condition";
 "and" = "and";
 "privacyPolicy" = "Privacy Policy";
+
+// MARK: - LogInView
+"welcomeBack" = "Welcome back";
+"enterYourDataToAccessYourAccount" = "Enter your data to access your\naccount";
+"forgotPassword" = "Forgot password";
+"continueButton" = "Continue";
+"dontHaveAnAccount" = "Don’t have an account?";
+"signUp" = "Sign up";
+
+// MARK: - ForgotPasswordView
+"resetPasswordInstructions" = "You will receive email with instructions\non how to reset your password";
+"typeYourEmail" = "Type your email";
+"next" = "Next";
+
+// MARK: - CheckYourInboxView
+"checkYourInbox" = "Check your inbox!";
+"confirmationLinkInstructions" = "You will receive your confirmation link\nvia email to reset the password";
+"didntReceiveLink" = "Didn’t receive a link?";
+"resendEmail" = "Resent Email";
+
+// MARK: - CreateNewPasswordView
+"createNewPassword" = "Create New\nPassword";
+"newPasswordInstructions" = "Create new password and confirm\nit below";
+"newPassword" = "New Password";
+"confirmNewPassword" = "Confirm New Password";
+
+// MARK: - PasswordChangedSuccessView
+"passwordChangedSuccessMessage" = "Your password has\nbeen changed\nsuccessfully!";
+"okay" = "Okay";
+
+// MARK: - AccountConfirmationView
+"accountConfirmationInstructions" = "You will receive your confirmation link\nvia email to confirm an account creation.";
+"accountConfirmationReminder" = "If you don’t confirm an account creation you still will\nbe able to explore STRONGMom app as a guest.";

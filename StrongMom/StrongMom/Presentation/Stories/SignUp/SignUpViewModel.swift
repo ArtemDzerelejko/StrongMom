@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import RegexBuilder
+
 
 final class SignUpViewModel: ObservableObject {
     
@@ -23,11 +23,11 @@ final class SignUpViewModel: ObservableObject {
     @Published var isPasswordMatchValid = false
     @Published var acceptedPrivacyPolicy = true
     @Published var acceptedTermsAndConditions = true
-    @Published var buttonInValid = false
     @Published var showAlert = false
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
-        
+    @Published var showLogInScreen: Bool = false
+    
     var cancellables: Set<AnyCancellable> = []
     
     enum Action {
@@ -45,6 +45,7 @@ final class SignUpViewModel: ObservableObject {
     // MARK: - Private properties
     private let authorizationUseCase = AuthorizationUseCase()
     private let userUseCase = UserUseCase()
+    private let tokenManager = TokenManager()
     
     // MARK: - Init
     init() {
@@ -60,7 +61,7 @@ final class SignUpViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-        
+    
     // MARK: - Check valid input
     func isValidInput() -> Bool {
         let isEmailValid = emailTextFieldText.isValidEmail()
@@ -77,12 +78,14 @@ final class SignUpViewModel: ObservableObject {
             case .success(let tokenResponse):
                 self.tokenResponse = tokenResponse
                 print("Token response: \(tokenResponse)")
+                try? TokenManager.save(service: Keys.strongMom, tokenResponse: tokenResponse)
             case .failure(let error):
                 print("Failed to get token response: \(error.localizedDescription)")
                 self.output.send(.showErrorAlert(error: error.localizedDescription))
             }
         }
     }
+    
     
     // MARK: - Create User
     func createUser() {

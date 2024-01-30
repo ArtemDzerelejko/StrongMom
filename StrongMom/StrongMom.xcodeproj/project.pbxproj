@@ -50,6 +50,16 @@
 		AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE822B5FE4F300684507 /* BaseService.swift */; };
 		AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC39FE9A2B6155EC00684507 /* AssetNames.swift */; };
 		AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB052B629B9D00969EF3 /* String+Extensions.swift */; };
+		AC40FB092B62A3DC00969EF3 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB082B62A3DC00969EF3 /* LogInView.swift */; };
+		AC40FB0B2B62A3FD00969EF3 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB0A2B62A3FD00969EF3 /* LogInViewModel.swift */; };
+		AC40FB0D2B62A8D200969EF3 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB0C2B62A8D200969EF3 /* SubtitleView.swift */; };
+		AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB0E2B67AC4800969EF3 /* TokenManager.swift */; };
+		AC40FB122B67AF2900969EF3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC40FB112B67AF2900969EF3 /* KeychainSwift */; };
+		AC40FB182B67E0E400969EF3 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB172B67E0E400969EF3 /* ForgotPasswordView.swift */; };
+		AC40FB1A2B67E47E00969EF3 /* CheckYourInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB192B67E47E00969EF3 /* CheckYourInboxView.swift */; };
+		AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB202B68FEFC00969EF3 /* AccountConfirmationView.swift */; };
+		AC40FB232B69030300969EF3 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */; };
+		AC40FB252B690FF700969EF3 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB242B690FF700969EF3 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +107,16 @@
 		AC39FE822B5FE4F300684507 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AC39FE9A2B6155EC00684507 /* AssetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetNames.swift; sourceTree = "<group>"; };
 		AC40FB052B629B9D00969EF3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AC40FB082B62A3DC00969EF3 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		AC40FB0A2B62A3FD00969EF3 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		AC40FB0C2B62A8D200969EF3 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
+		AC40FB0E2B67AC4800969EF3 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		AC40FB132B67B73200969EF3 /* StrongMom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StrongMom.entitlements; sourceTree = "<group>"; };
+		AC40FB172B67E0E400969EF3 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		AC40FB192B67E47E00969EF3 /* CheckYourInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckYourInboxView.swift; sourceTree = "<group>"; };
+		AC40FB202B68FEFC00969EF3 /* AccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfirmationView.swift; sourceTree = "<group>"; };
+		AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		AC40FB242B690FF700969EF3 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC40FB122B67AF2900969EF3 /* KeychainSwift in Frameworks */,
 				AC0481642B5A940C0001212D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +151,7 @@
 		AC0480D82B5733630001212D /* StrongMom */ = {
 			isa = PBXGroup;
 			children = (
+				AC40FB132B67B73200969EF3 /* StrongMom.entitlements */,
 				AC0480FF2B57F98A0001212D /* App */,
 				AC0481112B580C3C0001212D /* Data */,
 				AC0481162B580CEE0001212D /* Domain */,
@@ -169,6 +191,7 @@
 			children = (
 				AC0481362B5834C30001212D /* Strings.swift */,
 				AC39FE9A2B6155EC00684507 /* AssetNames.swift */,
+				AC40FB242B690FF700969EF3 /* Keys.swift */,
 				AC0481442B5916860001212D /* Localized */,
 				AC0480DD2B5733650001212D /* Assets.xcassets */,
 				AC0480F82B57EF1B0001212D /* Font */,
@@ -207,6 +230,7 @@
 				AC04814D2B5961E30001212D /* SocialMediaButton.swift */,
 				AC0481512B5A87530001212D /* AgreementButtonsView.swift */,
 				AC39FE802B5FE38000684507 /* HeaderView.swift */,
+				AC40FB0C2B62A8D200969EF3 /* SubtitleView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -217,6 +241,9 @@
 				AC0481202B581C710001212D /* SplashScreenView.swift */,
 				AC0481322B582C040001212D /* OnboardingScreenView.swift */,
 				AC04816D2B5E4E4A0001212D /* SignUp */,
+				AC40FB1F2B68FEB900969EF3 /* AccountConfirmation */,
+				AC40FB072B62A3B500969EF3 /* LogIn */,
+				AC40FB142B67E0A200969EF3 /* ForgotPassword */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -255,6 +282,7 @@
 				AC39FE822B5FE4F300684507 /* BaseService.swift */,
 				AC0481602B5A938B0001212D /* UserService.swift */,
 				AC39FE752B5FD36400684507 /* AuthorizationService.swift */,
+				AC40FB0E2B67AC4800969EF3 /* TokenManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -337,6 +365,33 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		AC40FB072B62A3B500969EF3 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				AC40FB0A2B62A3FD00969EF3 /* LogInViewModel.swift */,
+				AC40FB082B62A3DC00969EF3 /* LogInView.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		AC40FB142B67E0A200969EF3 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */,
+				AC40FB172B67E0E400969EF3 /* ForgotPasswordView.swift */,
+				AC40FB192B67E47E00969EF3 /* CheckYourInboxView.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		AC40FB1F2B68FEB900969EF3 /* AccountConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				AC40FB202B68FEFC00969EF3 /* AccountConfirmationView.swift */,
+			);
+			path = AccountConfirmation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +410,7 @@
 			name = StrongMom;
 			packageProductDependencies = (
 				AC0481632B5A940C0001212D /* Alamofire */,
+				AC40FB112B67AF2900969EF3 /* KeychainSwift */,
 			);
 			productName = StrongMom;
 			productReference = AC0480D62B5733630001212D /* StrongMom.app */;
@@ -386,6 +442,7 @@
 			mainGroup = AC0480CD2B5733630001212D;
 			packageReferences = (
 				AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC40FB102B67AF2900969EF3 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = AC0480D72B5733630001212D /* Products */;
 			projectDirPath = "";
@@ -424,12 +481,15 @@
 			files = (
 				AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */,
 				AC0481592B5A8B5D0001212D /* SecureTextField.swift in Sources */,
+				AC40FB0B2B62A3FD00969EF3 /* LogInViewModel.swift in Sources */,
 				AC39FE782B5FD64F00684507 /* AuthorizationRepository.swift in Sources */,
 				AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */,
 				AC39FE742B5FD2D500684507 /* APIEndpoint.swift in Sources */,
 				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
 				AC04814E2B5961E30001212D /* SocialMediaButton.swift in Sources */,
+				AC40FB232B69030300969EF3 /* ForgotPasswordViewModel.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
+				AC40FB1A2B67E47E00969EF3 /* CheckYourInboxView.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
 				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
 				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
@@ -442,16 +502,22 @@
 				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
 				AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */,
+				AC40FB252B690FF700969EF3 /* Keys.swift in Sources */,
 				AC39FE762B5FD36400684507 /* AuthorizationService.swift in Sources */,
 				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
 				AC0481482B5947700001212D /* SignUpView.swift in Sources */,
 				AC0481612B5A938B0001212D /* UserService.swift in Sources */,
 				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
+				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
 				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
+				AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */,
 				AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
+				AC40FB092B62A3DC00969EF3 /* LogInView.swift in Sources */,
+				AC40FB0D2B62A8D200969EF3 /* SubtitleView.swift in Sources */,
+				AC40FB182B67E0E400969EF3 /* ForgotPasswordView.swift in Sources */,
 				AC39FE812B5FE38000684507 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,10 +662,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StrongMom/StrongMom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = R4ADZKUSDW;
+				DEVELOPMENT_TEAM = 7A3H3B82LM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
@@ -632,10 +699,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StrongMom/StrongMom.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StrongMom/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = R4ADZKUSDW;
+				DEVELOPMENT_TEAM = 7A3H3B82LM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StrongMom/App/Info.plist;
@@ -695,6 +763,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		AC40FB102B67AF2900969EF3 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -702,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC0481622B5A940C0001212D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		AC40FB112B67AF2900969EF3 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC40FB102B67AF2900969EF3 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

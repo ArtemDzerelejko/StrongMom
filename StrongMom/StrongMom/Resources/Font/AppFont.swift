@@ -14,6 +14,8 @@ struct AppFont {
     static let Body1 = Font.custom(Montserraat.semiBold.weight, size: 14)
     /// Monserrat.regular, size: 14
     static let Body2 = Font.custom(Montserraat.regular.weight, size: 14)
+    /// Monserrat.regular, size: 16
+    static let Body3 = Font.custom(Montserraat.regular.weight, size: 16)
     /// Monserrat.regular, size: 12
     static let Caption1 = Font.custom(Montserraat.regular.weight, size: 12)
     

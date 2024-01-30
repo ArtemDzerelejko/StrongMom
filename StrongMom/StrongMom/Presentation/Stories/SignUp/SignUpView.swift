@@ -27,7 +27,7 @@ struct SignUpView: View {
                         
                         // MARK: - Header Section
                         HStack {
-                            HeaderView(title: Strings.createAnAccount)
+                            HeaderView(title: Strings.createAnAccount, multilineTextAlignment: .leading)
                                 .padding(.horizontal, 22)
                             Spacer()
                         }
@@ -112,8 +112,12 @@ struct SignUpView: View {
                         .padding(.bottom, 24)
                         
                         // MARK: - Link Button Section
-                        CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack, onTapAction: {})
-                        
+                        CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack, onTapAction: {
+                            signUpViewModel.showLogInScreen.toggle()
+                        })
+                        .fullScreenCover(isPresented: $signUpViewModel.showLogInScreen) {
+                            LogInView()
+                        }
                         Spacer()
                     }
                     
@@ -122,7 +126,6 @@ struct SignUpView: View {
                         signUpViewModel.action.send(.fetchToken)
                         setupSubscriber()
                     }
-                    
                 }
                 .navigationBarItems(leading: BackButton())
             }
