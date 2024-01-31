@@ -62,7 +62,7 @@ struct ForgotPasswordView: View {
                         }
                         .alert(isPresented: $forgotPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text("alertMessage"),
+                                  message: Text(alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         Spacer()

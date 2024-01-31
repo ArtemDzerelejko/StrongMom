@@ -29,7 +29,7 @@ class UserService: BaseService {
                 completion: completion)
     }
     
-    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserResponse, Error>) -> Void) {
+    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponse, Error>) -> Void) {
         let headers = commonHeaders(token: anonymousToken)
         
         request(url: APIEndpoint.logInUser.url,

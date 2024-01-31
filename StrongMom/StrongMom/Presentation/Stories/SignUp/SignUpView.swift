@@ -74,10 +74,14 @@ struct SignUpView: View {
                         // MARK: - Continue Button Section
                         PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail) {
                             signUpViewModel.action.send(.createUser)
+                            signUpViewModel.showAccountConfirmationScreen.toggle()
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 26)
                         .disabled(!signUpViewModel.isValidInput())
+                        .fullScreenCover(isPresented: $signUpViewModel.showAccountConfirmationScreen) {
+                            AccountConfirmationView()
+                        }
                         .alert(isPresented: $signUpViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
                                   message: Text(alertMessage),

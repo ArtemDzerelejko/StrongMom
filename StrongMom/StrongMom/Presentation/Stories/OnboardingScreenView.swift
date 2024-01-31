@@ -11,6 +11,7 @@ struct OnboardingScreenView: View {
     
     // MARK: - Public properties
     @State var showScreen: Bool = false
+    @State var showLogIn: Bool = false
     
     var body: some View {
         NavigationView {
@@ -44,7 +45,10 @@ struct OnboardingScreenView: View {
                     
                     // MARK: - Custom Link Button
                     CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {
-
+                        showLogIn.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showLogIn) {
+                        LogInView()
                     }
                     .padding(.leading, 69)
                     .padding(.trailing, 69)

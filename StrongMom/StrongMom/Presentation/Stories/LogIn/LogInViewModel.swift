@@ -13,9 +13,10 @@ final class LogInViewModel: ObservableObject {
     // MARK: - Public properties
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
-    @Published var logInUserResponse: LogInUserResponse?
+    @Published var logInUserResponse: LogInUserTokenResponse?
     @Published var showAlert = false
     @Published var showForgotPasswordScreen: Bool = false
+    @Published var showSignUpScreen: Bool = false
     
     var cancellables: Set<AnyCancellable> = []
     

@@ -77,7 +77,7 @@ struct LogInView: View {
                         .disabled(!logInViewModel.isValidLogIn())
                         .alert(isPresented: $logInViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text("alertMessage"),
+                                  message: Text(alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         
@@ -100,7 +100,10 @@ struct LogInView: View {
                         
                         // MARK: - Link Button Section
                         CustomLinkButtonWithText(text: Strings.dontHaveAnAccount, linkText: Strings.signUp, textColor: .customLightBlack) {
-                            print("CustomLinkButtonWithText")
+                            logInViewModel.showSignUpScreen.toggle()
+                        }
+                        .fullScreenCover(isPresented: $logInViewModel.showSignUpScreen) {
+                            SignUpView()
                         }
                         .padding(.top, 26)
                         .padding(.horizontal, 71)

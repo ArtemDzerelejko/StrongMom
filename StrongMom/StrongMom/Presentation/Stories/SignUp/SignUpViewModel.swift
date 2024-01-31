@@ -27,6 +27,7 @@ final class SignUpViewModel: ObservableObject {
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
     @Published var showLogInScreen: Bool = false
+    @Published var showAccountConfirmationScreen: Bool = false
     
     var cancellables: Set<AnyCancellable> = []
     

@@ -21,7 +21,7 @@ final class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserResponse, Error>) -> Void) {
+    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponse, Error>) -> Void) {
         userService.logInUser(model: model, anonymousToken: anonymousToken) { result in
             switch result {
             case .success(let result):

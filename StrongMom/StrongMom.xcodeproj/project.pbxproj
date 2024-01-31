@@ -60,6 +60,7 @@
 		AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB202B68FEFC00969EF3 /* AccountConfirmationView.swift */; };
 		AC40FB232B69030300969EF3 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */; };
 		AC40FB252B690FF700969EF3 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB242B690FF700969EF3 /* Keys.swift */; };
+		AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB312B6A787E00969EF3 /* ModelForToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		AC40FB202B68FEFC00969EF3 /* AccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfirmationView.swift; sourceTree = "<group>"; };
 		AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AC40FB242B690FF700969EF3 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		AC40FB312B6A787E00969EF3 /* ModelForToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				AC04815E2B5A93290001212D /* ModelForCreateUser.swift */,
+				AC40FB312B6A787E00969EF3 /* ModelForToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
 				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
+				AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */,
 				AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */,
 				AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,

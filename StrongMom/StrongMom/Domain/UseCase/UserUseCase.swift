@@ -14,7 +14,7 @@ final class UserUseCase {
         userRepository.createUser(model: model, token: token, completion: completion)
     }
     
-    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserResponse, Error>) -> Void) {
+    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponse, Error>) -> Void) {
         userRepository.logInUser(model: model, anonymousToken: anonymousToken, completion: completion)
     }
     
