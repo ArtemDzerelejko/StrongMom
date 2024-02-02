@@ -18,7 +18,7 @@ class UserService: BaseService {
         ]
     }
     
-    func createUser(model: ModelForCreateUser, token: String, completion: @escaping (Result<UserTokenResponse, Error>) -> Void) {
+    func createUser(model: CreateUserRemote, token: String, completion: @escaping (Result<UserTokenResponseRemote, Error>) -> Void) {
         let headers = commonHeaders(token: token)
         
         request(url: APIEndpoint.createUser.url,
@@ -29,7 +29,7 @@ class UserService: BaseService {
                 completion: completion)
     }
     
-    func logInUser(model: ModelForLogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponse, Error>) -> Void) {
+    func logInUser(model: LogInUserRemote, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponseRemote, Error>) -> Void) {
         let headers = commonHeaders(token: anonymousToken)
         
         request(url: APIEndpoint.logInUser.url,

@@ -56,7 +56,7 @@ final class LogInViewModel: ObservableObject {
             print("Error: \(error.localizedDescription)")
         }
         
-        let modelForLogInUser = ModelForLogInUser(email: self.emailTextFieldText, password: self.passwordTextFieldText)
+        let modelForLogInUser = LogInUser(email: self.emailTextFieldText, password: self.passwordTextFieldText)
         
         print(modelForLogInUser)
         

@@ -8,29 +8,58 @@
 import Foundation
 
 // MARK: - TokenResponse
-struct TokenResponse: Codable {
-    let token: String
-    let refreshToken: String
+class TokenResponse {
+    let token: String?
+    let refreshToken: String?
+    
+    init(token: String?,
+         refreshToken: String?) {
+        self.token = token
+        self.refreshToken = refreshToken
+    }
+    
+    init(from remote: TokenResponseRemote) {
+        self.token = remote.token ?? ""
+        self.refreshToken = remote.refreshToken ?? ""
+    }
+    
+    var remoteModel: TokenResponseRemote {
+        TokenResponseRemote(token: token,
+                            refreshToken: refreshToken)
+    }
+    
 }
 
 // MARK: - UserTokenResponse
-struct UserTokenResponse: Codable {
-    let userToken: String
-    let userRefreshToken: String
+class UserTokenResponse {
+    let userToken: String?
+    let userRefreshToken: String?
     
-    enum CodingKeys: String, CodingKey {
-        case userToken = "token"
-        case userRefreshToken = "refreshToken"
+    init(userToken: String?,
+         userRefreshToken: String?) {
+        self.userToken = userToken
+        self.userRefreshToken = userRefreshToken
+    }
+    
+    init(from remote: UserTokenResponseRemote) {
+        self.userToken = remote.userToken ?? ""
+        self.userRefreshToken = remote.userRefreshToken ?? ""
     }
 }
 
 // MARK: - LogInUserResponse
-struct LogInUserTokenResponse: Codable {
-    let logInUserToken: String
-    let logInUserRefreshToken: String
+class LogInUserTokenResponse {
+    let logInUserToken: String?
+    let logInUserRefreshToken: String?
     
-    enum CodingKeys: String, CodingKey {
-        case logInUserToken = "token"
-        case logInUserRefreshToken = "refreshToken"
+    init(logInUserToken: String?,
+         logInUserRefreshToken: String?) {
+        self.logInUserToken = logInUserToken
+        self.logInUserRefreshToken = logInUserRefreshToken
+    }
+    
+    init(from remote: LogInUserTokenResponseRemote) {
+        self.logInUserToken = remote.logInUserToken ?? ""
+        self.logInUserRefreshToken = remote.logInUserRefreshToken ?? ""
     }
 }

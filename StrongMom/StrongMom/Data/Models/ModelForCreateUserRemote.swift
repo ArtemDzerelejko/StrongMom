@@ -7,12 +7,18 @@
 
 import Foundation
 
-// MARK: - ModelForCreateUserRemote
-struct ModelForCreateUserRemote: Codable {
-    var email: String
-    var password: String
-    var passwordConfirmation: String
-    var timeZone: String
-    var acceptedPrivacyPolicy: Bool
-    var acceptedTermsAndConditions: Bool
+// MARK: - CreateUserRemote
+struct CreateUserRemote: Codable {
+    var email: String?
+    var password: String?
+    var passwordConfirmation: String?
+    var timezone: String?
+    var acceptedPrivacyPolicy: Bool?
+    var acceptedTermsAndConditions: Bool?
+}
+
+// MARK: - LogInUserRemote
+struct LogInUserRemote: Codable {
+    var email: String?
+    var password: String?
 }

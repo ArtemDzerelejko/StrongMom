@@ -9,7 +9,7 @@ import Alamofire
 
 class AuthorizationService: BaseService {
     
-    func getAnonymousToken(completion: @escaping (Result<TokenResponse, Error>) -> Void) {
+    func getAnonymousToken(completion: @escaping (Result<TokenResponseRemote, Error>) -> Void) {
         let headers: HTTPHeaders = ["Accept-Language": "en"]
         
         request(url: APIEndpoint.getToken.url,

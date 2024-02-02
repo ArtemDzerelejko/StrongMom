@@ -37,7 +37,6 @@
 		AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04815E2B5A93290001212D /* ModelForCreateUser.swift */; };
 		AC0481612B5A938B0001212D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481602B5A938B0001212D /* UserService.swift */; };
 		AC0481642B5A940C0001212D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC0481632B5A940C0001212D /* Alamofire */; };
-		AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */; };
 		AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0481692B5AB2730001212D /* UserRepository.swift */; };
 		AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816B2B5AB2B50001212D /* UserUseCase.swift */; };
 		AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC04816E2B5E4E610001212D /* SignUpViewModel.swift */; };
@@ -63,6 +62,7 @@
 		AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB312B6A787E00969EF3 /* ModelForToken.swift */; };
 		AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */; };
 		AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */; };
+		AC40FBBD2B6D240E00969EF3 /* ModelForTokenRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,7 +97,6 @@
 		AC04815A2B5A928E0001212D /* ModelForCreateUserRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForCreateUserRemote.swift; sourceTree = "<group>"; };
 		AC04815E2B5A93290001212D /* ModelForCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForCreateUser.swift; sourceTree = "<group>"; };
 		AC0481602B5A938B0001212D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
 		AC0481692B5AB2730001212D /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AC04816B2B5AB2B50001212D /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
 		AC04816E2B5E4E610001212D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		AC40FB312B6A787E00969EF3 /* ModelForToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForToken.swift; sourceTree = "<group>"; };
 		AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForTokenRemote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				AC04815A2B5A928E0001212D /* ModelForCreateUserRemote.swift */,
+				AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,7 +317,6 @@
 		AC0481182B580D010001212D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				AC0481652B5A99A50001212D /* UserRepositoryProtocol.swift */,
 				AC39FE792B5FD68100684507 /* AuthorizationRepositoryProtocol.swift */,
 			);
 			path = Repositories;
@@ -501,6 +501,7 @@
 				AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */,
 				AC40FB1A2B67E47E00969EF3 /* CheckYourInboxView.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
+				AC40FBBD2B6D240E00969EF3 /* ModelForTokenRemote.swift in Sources */,
 				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
 				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
 				AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */,
@@ -521,7 +522,6 @@
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
 				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
 				AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */,
-				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
 				AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */,
 				AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */,

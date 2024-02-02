@@ -21,7 +21,7 @@ class TokenManager {
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
-            kSecValueData as String: tokenResponse.token.data(using: .utf8) as AnyObject
+            kSecValueData as String: tokenResponse.token?.data(using: .utf8) as AnyObject
         ]
         
         let status = SecItemAdd(query as CFDictionary, nil)

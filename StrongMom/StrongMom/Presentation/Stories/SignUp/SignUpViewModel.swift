@@ -91,7 +91,7 @@ final class SignUpViewModel: ObservableObject {
             return
         }
         
-        let modelForCreateUser = ModelForCreateUser(
+        let modelForCreateUser = CreateUser(
             email: self.emailTextFieldText,
             password: self.passwordTextFieldText,
             passwordConfirmation: self.confirmPassword,
