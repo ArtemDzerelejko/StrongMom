@@ -7,29 +7,66 @@
 
 import Foundation
 
-// MARK: - ModelForCreateUser
-struct ModelForCreateUser: Codable {
-    var email: String
-    var password: String
-    var passwordConfirmation: String
-    var timezone: String
-    var acceptedPrivacyPolicy: Bool
-    var acceptedTermsAndConditions: Bool
-}
-
-// MARK: - TokenResponse
-struct TokenResponse: Codable {
-    let token: String
-    let refreshToken: String
-}
-
-// MARK: - UserTokenResponse
-struct UserTokenResponse: Codable {
-    let userToken: String
-    let userRefreshToken: String
+// MARK: - CreateUser
+class CreateUser {
+    var email: String?
+    var password: String?
+    var passwordConfirmation: String?
+    var timezone: String?
+    var acceptedPrivacyPolicy: Bool?
+    var acceptedTermsAndConditions: Bool?
     
-    enum CodingKeys: String, CodingKey {
-        case userToken = "token"
-        case userRefreshToken = "refreshToken"
+    init(email: String?,
+         password: String?,
+         passwordConfirmation: String?,
+         timezone: String?,
+         acceptedPrivacyPolicy: Bool?,
+         acceptedTermsAndConditions: Bool?) {
+        self.email = email
+        self.password = password
+        self.passwordConfirmation = passwordConfirmation
+        self.timezone = timezone
+        self.acceptedPrivacyPolicy = acceptedPrivacyPolicy
+        self.acceptedTermsAndConditions = acceptedTermsAndConditions
+    }
+    
+    init(from remote: CreateUserRemote) {
+        self.email = remote.email ?? ""
+        self.password = remote.password ?? ""
+        self.passwordConfirmation = remote.passwordConfirmation ?? ""
+        self.timezone = remote.timezone ?? ""
+        self.acceptedPrivacyPolicy = remote.acceptedPrivacyPolicy
+        self.acceptedTermsAndConditions = remote.acceptedTermsAndConditions
+    }
+    
+    var toRemote: CreateUserRemote {
+        CreateUserRemote(email: email,
+                         password: password,
+                         passwordConfirmation: passwordConfirmation,
+                         timezone: timezone,
+                         acceptedPrivacyPolicy: acceptedPrivacyPolicy,
+                         acceptedTermsAndConditions: acceptedTermsAndConditions)
+    }
+}
+
+// MARK: - LogInUser
+class LogInUser: Codable {
+    var email: String?
+    var password: String?
+    
+    init(email: String? = nil,
+         password: String? = nil) {
+        self.email = email
+        self.password = password
+    }
+    
+    init(from remote: LogInUserRemote) {
+        self.email = remote.email ?? ""
+        self.password = remote.password ?? ""
+    }
+    
+    var remoteModel: LogInUserRemote {
+        LogInUserRemote(email: email,
+                        password: password)
     }
 }

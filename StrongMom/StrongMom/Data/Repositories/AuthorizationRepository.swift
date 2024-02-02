@@ -13,8 +13,9 @@ final class AuthorizationRepository: AuthorizationRepositoryProtocol {
     func getAnonymousToken(completion: @escaping (Result<TokenResponse, Error>) -> Void) {
         authorizationService.getAnonymousToken { result in
             switch result {
-            case .success(let result):
-                completion(.success(result))
+            case .success(let tokenResponse):
+                let tokenResponse = TokenResponse(from: tokenResponse)
+                completion(.success(tokenResponse))
             case .failure(let error):
                 completion(.failure(error))
             }

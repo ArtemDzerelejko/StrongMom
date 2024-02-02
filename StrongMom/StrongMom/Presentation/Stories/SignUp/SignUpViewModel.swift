@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import RegexBuilder
+
 
 final class SignUpViewModel: ObservableObject {
     
@@ -23,11 +23,13 @@ final class SignUpViewModel: ObservableObject {
     @Published var isPasswordMatchValid = false
     @Published var acceptedPrivacyPolicy = true
     @Published var acceptedTermsAndConditions = true
-    @Published var buttonInValid = false
     @Published var showAlert = false
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
-        
+    @Published var alertMessage = ""
+    @Published var showLogInScreen: Bool = false
+    @Published var showAccountConfirmationScreen: Bool = false
+    
     var cancellables: Set<AnyCancellable> = []
     
     enum Action {
@@ -45,22 +47,13 @@ final class SignUpViewModel: ObservableObject {
     // MARK: - Private properties
     private let authorizationUseCase = AuthorizationUseCase()
     private let userUseCase = UserUseCase()
+    private let tokenManager = TokenManager()
     
     // MARK: - Init
     init() {
-        action
-            .sink { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .createUser:
-                    self.createUser()
-                case .fetchToken:
-                    self.fetchToken()
-                }
-            }
-            .store(in: &cancellables)
+        setupSubscriberForSignUpView()
     }
-        
+    
     // MARK: - Check valid input
     func isValidInput() -> Bool {
         let isEmailValid = emailTextFieldText.isValidEmail()
@@ -77,12 +70,18 @@ final class SignUpViewModel: ObservableObject {
             case .success(let tokenResponse):
                 self.tokenResponse = tokenResponse
                 print("Token response: \(tokenResponse)")
+                try? TokenManager.save(service: Keys.strongMom, tokenResponse: tokenResponse)
             case .failure(let error):
                 print("Failed to get token response: \(error.localizedDescription)")
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
     }
+    
     
     // MARK: - Create User
     func createUser() {
@@ -92,7 +91,7 @@ final class SignUpViewModel: ObservableObject {
             return
         }
         
-        let modelForCreateUser = ModelForCreateUser(
+        let modelForCreateUser = CreateUser(
             email: self.emailTextFieldText,
             password: self.passwordTextFieldText,
             passwordConfirmation: self.confirmPassword,
@@ -110,8 +109,36 @@ final class SignUpViewModel: ObservableObject {
                 print("UserTokenResponse: \(userTokenResponse)")
             case .failure(let error):
                 print("Failed to fetch token: \(error.localizedDescription)")
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
+    }
+    
+    private func setupSubscriberForSignUpView() {
+        action
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .createUser:
+                    self.createUser()
+                case .fetchToken:
+                    self.fetchToken()
+                }
+            }
+            .store(in: &cancellables)
+        output
+            .sink { [weak self] output in
+                guard let self else { return }
+                switch output {
+                case let .showErrorAlert(error):
+                    alertMessage = "\(error)"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
     }
 }

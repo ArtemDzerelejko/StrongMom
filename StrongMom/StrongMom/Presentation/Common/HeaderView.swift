@@ -9,16 +9,18 @@ import SwiftUI
 
 struct HeaderView: View {
     let title: String
+    let multilineTextAlignment: TextAlignment
     
-    init(title: String) {
+    init(title: String, multilineTextAlignment: TextAlignment) {
         self.title = title
+        self.multilineTextAlignment = multilineTextAlignment
     }
     
     var body: some View {
         Text(title)
             .font(AppFont.Headline1)
             .foregroundColor(.customLightBlack)
-            .lineLimit(2)
-            .multilineTextAlignment(.leading)
+            .lineLimit(3)
+            .multilineTextAlignment(multilineTextAlignment)
     }
 }

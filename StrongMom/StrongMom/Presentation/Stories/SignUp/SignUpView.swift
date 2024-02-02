@@ -6,14 +6,11 @@
 //
 
 import SwiftUI
-import Combine
 
 struct SignUpView: View {
     
     // MARK: - Private properties
     @StateObject private var signUpViewModel = SignUpViewModel()
-    @State private var alertMessage = ""
-    @State private var subscriber: AnyCancellable?
     
     var body: some View {
         NavigationStack {
@@ -27,7 +24,7 @@ struct SignUpView: View {
                         
                         // MARK: - Header Section
                         HStack {
-                            HeaderView(title: Strings.createAnAccount)
+                            HeaderView(title: Strings.createAnAccount, multilineTextAlignment: .leading)
                                 .padding(.horizontal, 22)
                             Spacer()
                         }
@@ -74,13 +71,17 @@ struct SignUpView: View {
                         // MARK: - Continue Button Section
                         PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail) {
                             signUpViewModel.action.send(.createUser)
+                            signUpViewModel.showAccountConfirmationScreen.toggle()
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 26)
                         .disabled(!signUpViewModel.isValidInput())
+                        .fullScreenCover(isPresented: $signUpViewModel.showAccountConfirmationScreen) {
+                            AccountConfirmationView()
+                        }
                         .alert(isPresented: $signUpViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text(alertMessage),
+                                  message: Text(signUpViewModel.alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         
@@ -112,33 +113,24 @@ struct SignUpView: View {
                         .padding(.bottom, 24)
                         
                         // MARK: - Link Button Section
-                        CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack, onTapAction: {})
-                        
+                        CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .customLightBlack, onTapAction: {
+                            signUpViewModel.showLogInScreen.toggle()
+                        })
+                        .fullScreenCover(isPresented: $signUpViewModel.showLogInScreen) {
+                            LogInView()
+                        }
                         Spacer()
                     }
                     
                     // MARK: - On Appear Section
                     .onAppear {
                         signUpViewModel.action.send(.fetchToken)
-                        setupSubscriber()
                     }
-                    
                 }
                 .navigationBarItems(leading: BackButton())
             }
+            .onTapGesture { self.endEditing() }
         }
-    }
-    
-    // MARK: - Helper Methods
-    private func setupSubscriber() {
-        subscriber = signUpViewModel.output
-            .sink { [self] output in
-                switch output {
-                case let .showErrorAlert(error):
-                    signUpViewModel.showAlert = true
-                    alertMessage = "\(error)"
-                }
-            }
     }
 }
 
