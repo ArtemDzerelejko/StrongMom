@@ -61,6 +61,8 @@
 		AC40FB232B69030300969EF3 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */; };
 		AC40FB252B690FF700969EF3 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB242B690FF700969EF3 /* Keys.swift */; };
 		AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB312B6A787E00969EF3 /* ModelForToken.swift */; };
+		AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */; };
+		AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,8 @@
 		AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AC40FB242B690FF700969EF3 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		AC40FB312B6A787E00969EF3 /* ModelForToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForToken.swift; sourceTree = "<group>"; };
+		AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +289,7 @@
 				AC0481602B5A938B0001212D /* UserService.swift */,
 				AC39FE752B5FD36400684507 /* AuthorizationService.swift */,
 				AC40FB0E2B67AC4800969EF3 /* TokenManager.swift */,
+				AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			children = (
 				AC0481452B5916C50001212D /* Localizable+Extensions.swift */,
 				AC40FB052B629B9D00969EF3 /* String+Extensions.swift */,
+				AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				AC04814E2B5961E30001212D /* SocialMediaButton.swift in Sources */,
 				AC40FB232B69030300969EF3 /* ForgotPasswordViewModel.swift in Sources */,
 				AC0480DA2B5733630001212D /* StrongMomApp.swift in Sources */,
+				AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */,
 				AC40FB1A2B67E47E00969EF3 /* CheckYourInboxView.swift in Sources */,
 				AC0481352B582D290001212D /* PrimaryButton.swift in Sources */,
 				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
@@ -513,6 +520,7 @@
 				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
 				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
+				AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */,
 				AC0481662B5A99A50001212D /* UserRepositoryProtocol.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
 				AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */,

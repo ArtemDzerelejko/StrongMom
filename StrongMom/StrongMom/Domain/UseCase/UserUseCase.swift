@@ -18,7 +18,7 @@ final class UserUseCase {
         userRepository.logInUser(model: model, anonymousToken: anonymousToken, completion: completion)
     }
     
-    func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
         userRepository.resetPassword(email: email, anonymousToken: anonymousToken, completion: completion)
     }
 }

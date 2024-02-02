@@ -17,6 +17,7 @@ final class LogInViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var showForgotPasswordScreen: Bool = false
     @Published var showSignUpScreen: Bool = false
+    @Published var alertMessage = ""
     
     var cancellables: Set<AnyCancellable> = []
     
@@ -36,15 +37,7 @@ final class LogInViewModel: ObservableObject {
     
     // MARK: - Init
     init() {
-        action
-            .sink { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .logInUser:
-                    self.logInUser()
-                }
-            }
-            .store(in: &cancellables)
+        setupSubscriberForLogInView()
     }
     
     // MARK: - Check valid input
@@ -75,8 +68,34 @@ final class LogInViewModel: ObservableObject {
                 print("LogInUserResponse: \(logInUserResponse)")
             case .failure(let error):
                 print("Failed to fetch token: \(error.localizedDescription)")
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
+    }
+    
+    private func setupSubscriberForLogInView() {
+        action
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .logInUser:
+                    self.logInUser()
+                }
+            }
+            .store(in: &cancellables)
+        output
+            .sink { [weak self] output in
+                guard let self else { return }
+                switch output {
+                case let .showErrorAlert(error):
+                    alertMessage = "\(error)"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
     }
 }

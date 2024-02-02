@@ -8,6 +8,10 @@
 import Foundation
 
 struct Strings {
+    // MARK: - BaseService
+    static let canNotParsError: String = "canNotParsError".localized
+    static let canNotFindData: String = "canNotFindData".localized
+    
     // MARK: - OnboardingScreenView
     static let welcomeText: String = "welcomeText".localized
     static let createAccount: String = "createAccount".localized

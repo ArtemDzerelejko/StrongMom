@@ -6,14 +6,11 @@
 //
 
 import SwiftUI
-import Combine
 
 struct SignUpView: View {
     
     // MARK: - Private properties
     @StateObject private var signUpViewModel = SignUpViewModel()
-    @State private var alertMessage = ""
-    @State private var subscriber: AnyCancellable?
     
     var body: some View {
         NavigationStack {
@@ -84,7 +81,7 @@ struct SignUpView: View {
                         }
                         .alert(isPresented: $signUpViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text(alertMessage),
+                                  message: Text(signUpViewModel.alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         
@@ -128,24 +125,12 @@ struct SignUpView: View {
                     // MARK: - On Appear Section
                     .onAppear {
                         signUpViewModel.action.send(.fetchToken)
-                        setupSubscriber()
                     }
                 }
                 .navigationBarItems(leading: BackButton())
             }
+            .onTapGesture { self.endEditing() }
         }
-    }
-    
-    // MARK: - Helper Methods
-    private func setupSubscriber() {
-        subscriber = signUpViewModel.output
-            .sink { [self] output in
-                switch output {
-                case let .showErrorAlert(error):
-                    signUpViewModel.showAlert = true
-                    alertMessage = "\(error)"
-                }
-            }
     }
 }
 

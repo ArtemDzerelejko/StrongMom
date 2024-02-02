@@ -6,6 +6,11 @@
 //
 
 import Alamofire
+import Foundation
+
+struct EmptyDecodable: Decodable {
+    init(from decoder: Decoder) throws {}
+}
 
 class BaseService {
     
@@ -17,26 +22,19 @@ class BaseService {
         case .success(let result):
             completion(.success(result))
         case .failure(let afError):
-            var statusCode: Int?
-            
-            if let responseStatusCode = response.response?.statusCode {
-                statusCode = responseStatusCode
-                
-                switch afError {
-                case .responseValidationFailed(let reason):
-                    switch reason {
-                    case .unacceptableStatusCode(let code):
-                        print("Response status code was unacceptable: \(code)")
-                        statusCode = code
-                    default:
-                        break
-                    }
-                default:
-                    break
+            if let data = response.data {
+                let decoder = JSONDecoder()
+                do {
+                    let networkError = try decoder.decode(NetworkError.self, from: data)
+                    completion(.failure(networkError))
+                } catch {
+                    let JSONErorr: NetworkError = .init(errorDescription: Strings.canNotParsError, error: Strings.error, violations: nil)
+                    completion(.failure(JSONErorr))
                 }
+            } else {
+                let JSONErorr: NetworkError = .init(errorDescription: Strings.canNotFindData, error: Strings.error, violations: nil)
+                completion(.failure(JSONErorr))
             }
-            completion(.failure(afError))
-            print("Status Code: \(statusCode ?? -1)")
         }
     }
     
@@ -47,7 +45,7 @@ class BaseService {
                                              headers: HTTPHeaders? = nil,
                                              completion: @escaping (Result<T, Error>) -> Void) {
         AF.request(url, method: method, parameters: parameters, encoder: encoder, headers: headers)
-            .validate(statusCode: 200...500)
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: T.self) { response in
                 self.handleResponse(response: response, completion: completion)
             }
@@ -58,35 +56,11 @@ class BaseService {
                                parameters: U? = nil,
                                encoder: ParameterEncoder,
                                headers: HTTPHeaders? = nil,
-                               completion: @escaping (Result<Void, Error>) -> Void) {
+                               completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
         AF.request(url, method: method, parameters: parameters, encoder: encoder, headers: headers)
-            .validate(statusCode: 200...500)
-            .response { response in
-                switch response.result {
-                case .success:
-                    completion(.success(()))
-                case .failure(let afError):
-                    var statusCode: Int?
-                    
-                    if let responseStatusCode = response.response?.statusCode {
-                        statusCode = responseStatusCode
-                        
-                        switch afError {
-                        case .responseValidationFailed(let reason):
-                            switch reason {
-                            case .unacceptableStatusCode(let code):
-                                print("Response status code was unacceptable: \(code)")
-                                statusCode = code
-                            default:
-                                break
-                            }
-                        default:
-                            break
-                        }
-                    }
-                    completion(.failure(afError))
-                    print("Status Code: \(statusCode ?? -1)")
-                }
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: EmptyDecodable.self) { response in
+                self.handleResponse(response: response, completion: completion)
             }
     }
 }

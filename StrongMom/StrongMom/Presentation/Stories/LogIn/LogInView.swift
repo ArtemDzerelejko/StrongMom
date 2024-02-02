@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-import Combine
 
 struct LogInView: View {
     
     @StateObject private var logInViewModel = LogInViewModel()
-    @State private var alertMessage = ""
-    @State private var subscriberForLogInView: AnyCancellable?
     
     var body: some View {
         NavigationStack {
@@ -70,14 +67,13 @@ struct LogInView: View {
                         
                         PrimaryButton(isValid: logInViewModel.isValidLogIn(), text: Strings.continueButton) {
                             logInViewModel.action.send(.logInUser)
-                            setupSubscriberForLogInView()
                         }
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!logInViewModel.isValidLogIn())
                         .alert(isPresented: $logInViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text(alertMessage),
+                                  message: Text(logInViewModel.alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         
@@ -113,19 +109,8 @@ struct LogInView: View {
                     .navigationBarItems(leading: BackButton())
                 }
             }
+            .onTapGesture { self.endEditing() }
         }
-    }
-    
-    // MARK: - Helper Methods
-    private func setupSubscriberForLogInView() {
-        subscriberForLogInView = logInViewModel.output
-            .sink { [self] output in
-                switch output {
-                case let .showErrorAlert(error):
-                    logInViewModel.showAlert = true
-                    alertMessage = "\(error)"
-                }
-            }
     }
 }
 

@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-import Combine
 
 struct ForgotPasswordView: View {
     
     @StateObject private var forgotPasswordViewModel = ForgotPasswordViewModel()
-    @State private var alertMessage = ""
-    @State private var subscriberForForgotPasswordView: AnyCancellable?
     
     var body: some View {
         NavigationStack {
@@ -52,7 +49,6 @@ struct ForgotPasswordView: View {
                         PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next) {
                             forgotPasswordViewModel.action.send(.forgotPassword)
                             forgotPasswordViewModel.showCheckYourInboxScreen.toggle()
-                            setupSubscriberForForgotPasswordView()
                         }
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
@@ -62,7 +58,7 @@ struct ForgotPasswordView: View {
                         }
                         .alert(isPresented: $forgotPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
-                                  message: Text(alertMessage),
+                                  message: Text(forgotPasswordViewModel.alertMessage),
                                   dismissButton: .default(Text(Strings.ok)))
                         }
                         Spacer()
@@ -70,19 +66,8 @@ struct ForgotPasswordView: View {
                     .navigationBarItems(leading: BackButton())
                 }
             }
+            .onTapGesture { self.endEditing() }
         }
-    }
-    
-    // MARK: - Helper Methods
-    private func setupSubscriberForForgotPasswordView() {
-        subscriberForForgotPasswordView = forgotPasswordViewModel.output
-            .sink { [self] output in
-                switch output {
-                case let .showErrorAlert(error):
-                    forgotPasswordViewModel.showAlert = true
-                    alertMessage = "\(error)"
-                }
-            }
     }
 }
 

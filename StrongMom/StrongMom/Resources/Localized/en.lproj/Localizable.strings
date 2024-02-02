@@ -1,3 +1,7 @@
+// MARK: - BaseService
+ "canNotParsError" = "Can not parse Error";
+ "canNotFindData" = "Can not find Data";
+
 // MARK: - OnboardingScreenView
 "welcomeText" = "Welcome to the\nstrong life";
 "createAccount" = "Create account";

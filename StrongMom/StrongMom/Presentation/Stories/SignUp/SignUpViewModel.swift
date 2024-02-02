@@ -26,6 +26,7 @@ final class SignUpViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
+    @Published var alertMessage = ""
     @Published var showLogInScreen: Bool = false
     @Published var showAccountConfirmationScreen: Bool = false
     
@@ -50,17 +51,7 @@ final class SignUpViewModel: ObservableObject {
     
     // MARK: - Init
     init() {
-        action
-            .sink { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .createUser:
-                    self.createUser()
-                case .fetchToken:
-                    self.fetchToken()
-                }
-            }
-            .store(in: &cancellables)
+        setupSubscriberForSignUpView()
     }
     
     // MARK: - Check valid input
@@ -82,7 +73,11 @@ final class SignUpViewModel: ObservableObject {
                 try? TokenManager.save(service: Keys.strongMom, tokenResponse: tokenResponse)
             case .failure(let error):
                 print("Failed to get token response: \(error.localizedDescription)")
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
     }
@@ -114,8 +109,36 @@ final class SignUpViewModel: ObservableObject {
                 print("UserTokenResponse: \(userTokenResponse)")
             case .failure(let error):
                 print("Failed to fetch token: \(error.localizedDescription)")
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
+    }
+    
+    private func setupSubscriberForSignUpView() {
+        action
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .createUser:
+                    self.createUser()
+                case .fetchToken:
+                    self.fetchToken()
+                }
+            }
+            .store(in: &cancellables)
+        output
+            .sink { [weak self] output in
+                guard let self else { return }
+                switch output {
+                case let .showErrorAlert(error):
+                    alertMessage = "\(error)"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
     }
 }

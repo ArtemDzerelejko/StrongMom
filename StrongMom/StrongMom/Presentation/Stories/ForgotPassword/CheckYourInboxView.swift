@@ -44,7 +44,6 @@ struct CheckYourInboxView: View {
                         // MARK: - Link Button Section
                         CustomLinkButtonWithText(text: Strings.didntReceiveLink, linkText: Strings.resendEmail, textColor: .customLightBlack) {
                             forgotPasswordViewModel.action.send(.forgotPassword)
-                            setupSubscriberCheckYourInboxView()
                         }
                         .padding(.top, 40)
                         .padding(.horizontal, 59)
@@ -54,18 +53,6 @@ struct CheckYourInboxView: View {
                 })
             }
         }
-    }
-    
-    // MARK: - Helper Methods
-    private func setupSubscriberCheckYourInboxView() {
-        subscriberForCheckYourInboxView = forgotPasswordViewModel.output
-            .sink { [self] output in
-                switch output {
-                case let .showErrorAlert(error):
-                    forgotPasswordViewModel.showAlert = true
-                    alertMessage = "\(error)"
-                }
-            }
     }
 }
 

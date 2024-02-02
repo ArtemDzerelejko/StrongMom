@@ -14,6 +14,7 @@ class ForgotPasswordViewModel: ObservableObject {
     @Published var emailTextFieldText: String = ""
     @Published var showCheckYourInboxScreen: Bool = false
     @Published var showAlert = false
+    @Published var alertMessage = ""
     
     var cancellables: Set<AnyCancellable> = []
     
@@ -33,15 +34,7 @@ class ForgotPasswordViewModel: ObservableObject {
     
     // MARK: - Init
     init() {
-        action
-            .sink { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .forgotPassword:
-                    self.forgotPassword()
-                }
-            }
-            .store(in: &cancellables)
+        setupSubscriberForForgotPasswordView()
     }
     
     // MARK: - Check valid input
@@ -67,8 +60,34 @@ class ForgotPasswordViewModel: ObservableObject {
             case .success:
                 print("Ok")
             case .failure(let error):
-                self.output.send(.showErrorAlert(error: error.localizedDescription))
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
             }
         }
+    }
+    
+    private func setupSubscriberForForgotPasswordView() {
+        action
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .forgotPassword:
+                    self.forgotPassword()
+                }
+            }
+            .store(in: &cancellables)
+        output
+            .sink { [weak self] output in
+                guard let self else { return }
+                switch output {
+                case let .showErrorAlert(error):
+                    alertMessage = "\(error)"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
     }
 }

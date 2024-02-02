@@ -40,7 +40,7 @@ class UserService: BaseService {
                 completion: completion)
     }
     
-    func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
         let headers = commonHeaders(token: anonymousToken)
         
         request(url: APIEndpoint.resetPassword(email: email).url,
