@@ -21,7 +21,7 @@ class BaseService {
         switch response.result {
         case .success(let result):
             completion(.success(result))
-        case .failure(let afError):
+        case .failure(_):
             if let data = response.data {
                 let decoder = JSONDecoder()
                 do {

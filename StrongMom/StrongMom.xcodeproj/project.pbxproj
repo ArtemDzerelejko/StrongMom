@@ -63,6 +63,12 @@
 		AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */; };
 		AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */; };
 		AC40FBBD2B6D240E00969EF3 /* ModelForTokenRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */; };
+		ACD46FFD2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD46FFC2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift */; };
+		ACD46FFF2B7268AA00BE1C16 /* CreateNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD46FFE2B7268AA00BE1C16 /* CreateNewPasswordView.swift */; };
+		ACD470012B7269B300BE1C16 /* PasswordChangedSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470002B7269B300BE1C16 /* PasswordChangedSuccessView.swift */; };
+		ACD470032B72714F00BE1C16 /* PasswordMismatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470022B72714F00BE1C16 /* PasswordMismatchView.swift */; };
+		ACD470072B73CD5E00BE1C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */; };
+		ACD470092B73CDDC00BE1C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +129,12 @@
 		AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForTokenRemote.swift; sourceTree = "<group>"; };
+		ACD46FFC2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewModel.swift; sourceTree = "<group>"; };
+		ACD46FFE2B7268AA00BE1C16 /* CreateNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordView.swift; sourceTree = "<group>"; };
+		ACD470002B7269B300BE1C16 /* PasswordChangedSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedSuccessView.swift; sourceTree = "<group>"; };
+		ACD470022B72714F00BE1C16 /* PasswordMismatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordMismatchView.swift; sourceTree = "<group>"; };
+		ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				AC0480D92B5733630001212D /* StrongMomApp.swift */,
+				ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */,
+				ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */,
 				AC0480FB2B57EF930001212D /* Info.plist */,
 			);
 			path = App;
@@ -237,6 +251,7 @@
 				AC0481512B5A87530001212D /* AgreementButtonsView.swift */,
 				AC39FE802B5FE38000684507 /* HeaderView.swift */,
 				AC40FB0C2B62A8D200969EF3 /* SubtitleView.swift */,
+				ACD470022B72714F00BE1C16 /* PasswordMismatchView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -250,6 +265,7 @@
 				AC40FB1F2B68FEB900969EF3 /* AccountConfirmation */,
 				AC40FB072B62A3B500969EF3 /* LogIn */,
 				AC40FB142B67E0A200969EF3 /* ForgotPassword */,
+				ACD46FFB2B72687A00BE1C16 /* CreateNewPassword */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -401,6 +417,16 @@
 			path = AccountConfirmation;
 			sourceTree = "<group>";
 		};
+		ACD46FFB2B72687A00BE1C16 /* CreateNewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				ACD46FFC2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift */,
+				ACD46FFE2B7268AA00BE1C16 /* CreateNewPasswordView.swift */,
+				ACD470002B7269B300BE1C16 /* PasswordChangedSuccessView.swift */,
+			);
+			path = CreateNewPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,7 +517,9 @@
 				AC04816A2B5AB2730001212D /* UserRepository.swift in Sources */,
 				AC0481592B5A8B5D0001212D /* SecureTextField.swift in Sources */,
 				AC40FB0B2B62A3FD00969EF3 /* LogInViewModel.swift in Sources */,
+				ACD470032B72714F00BE1C16 /* PasswordMismatchView.swift in Sources */,
 				AC39FE782B5FD64F00684507 /* AuthorizationRepository.swift in Sources */,
+				ACD470012B7269B300BE1C16 /* PasswordChangedSuccessView.swift in Sources */,
 				AC39FE7C2B5FD74A00684507 /* AuthorizationUseCase.swift in Sources */,
 				AC39FE742B5FD2D500684507 /* APIEndpoint.swift in Sources */,
 				AC04813D2B588DE10001212D /* AppFont.swift in Sources */,
@@ -504,11 +532,13 @@
 				AC40FBBD2B6D240E00969EF3 /* ModelForTokenRemote.swift in Sources */,
 				AC39FE832B5FE4F300684507 /* BaseService.swift in Sources */,
 				AC04815B2B5A928E0001212D /* ModelForCreateUserRemote.swift in Sources */,
+				ACD46FFD2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift in Sources */,
 				AC39FE9B2B6155EC00684507 /* AssetNames.swift in Sources */,
 				AC04815F2B5A93290001212D /* ModelForCreateUser.swift in Sources */,
 				AC0481372B5834C30001212D /* Strings.swift in Sources */,
 				AC04814A2B5948290001212D /* BackButton.swift in Sources */,
 				AC04816C2B5AB2B50001212D /* UserUseCase.swift in Sources */,
+				ACD470072B73CD5E00BE1C16 /* AppDelegate.swift in Sources */,
 				AC39FE7A2B5FD68100684507 /* AuthorizationRepositoryProtocol.swift in Sources */,
 				AC0481462B5916C50001212D /* Localizable+Extensions.swift in Sources */,
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
@@ -520,12 +550,14 @@
 				AC0481612B5A938B0001212D /* UserService.swift in Sources */,
 				AC0481332B582C040001212D /* OnboardingScreenView.swift in Sources */,
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
+				ACD470092B73CDDC00BE1C16 /* SceneDelegate.swift in Sources */,
 				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
 				AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
 				AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */,
 				AC40FB212B68FEFC00969EF3 /* AccountConfirmationView.swift in Sources */,
 				AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */,
+				ACD46FFF2B7268AA00BE1C16 /* CreateNewPasswordView.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
 				AC40FB092B62A3DC00969EF3 /* LogInView.swift in Sources */,
 				AC40FB0D2B62A8D200969EF3 /* SubtitleView.swift in Sources */,

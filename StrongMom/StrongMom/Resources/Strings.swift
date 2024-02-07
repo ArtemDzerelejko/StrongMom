@@ -70,4 +70,7 @@ struct Strings {
     // MARK: - AccountConfirmationView
     static let accountConfirmationInstructions: String = "accountConfirmationInstructions".localized
     static let accountConfirmationReminder: String = "accountConfirmationReminder".localized
+    
+    // MARK: - CreateNewPasswordView
+    static let securePassword: String = "securePassword".localized
 }

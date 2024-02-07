@@ -67,6 +67,10 @@ struct ForgotPasswordView: View {
                 }
             }
             .onTapGesture { self.endEditing() }
+            .onOpenURL { incomingURL in
+                    print("App was opened via URL: \(incomingURL)")
+                    print(incomingURL)
+                }
         }
     }
 }

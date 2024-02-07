@@ -60,3 +60,6 @@
 // MARK: - AccountConfirmationView
 "accountConfirmationInstructions" = "You will receive your confirmation link\nvia email to confirm an account creation.";
 "accountConfirmationReminder" = "If you don’t confirm an account creation you still will\nbe able to explore STRONGMom app as a guest.";
+
+// MARK: - CreateNewPasswordView
+"securePassword" = "Secure password";
