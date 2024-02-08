@@ -15,11 +15,29 @@ final class CreateNewPasswordViewModel: ObservableObject {
     @Published var confirmPassword: String = ""
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
+    @StateObject var checkYourInboxViewModel = CheckYourInboxViewModel()
+    @Published var alertMessage = ""
+    @Published var showAlert = false
+    @Published var resetPasswordToken: String = ""
     
     var cancellables: Set<AnyCancellable> = []
     
+    enum Action {
+        case changePassword
+    }
+    
+    enum Output {
+        case showErrorAlert(error: String)
+    }
+    
+    var action = PassthroughSubject<Action, Never>()
+    var output = PassthroughSubject<Output, Never>()
+    
+    //MARK: - Private properties
+    private let userUseCase = UserUseCase()
+    
     init() {
-        
+        setupSubscriberForCreateNewPasswordView()
     }
     
     // MARK: - Check valid input
@@ -32,5 +50,60 @@ final class CreateNewPasswordViewModel: ObservableObject {
     // MARK: - Public methods
     func isPasswordSecure() -> Bool {
         return ValidatePassword.validatePassword(passwordTextFieldText)
+    }
+    
+    // MARK: - Change password
+    func changePassword() {
+        var tokenResponse: TokenResponse?
+        do {
+            tokenResponse = try TokenManager.get(service: Keys.strongMom)
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+        
+        guard let token = tokenResponse?.token else { return }
+        print(token)
+        
+//        let changePasswordUser = ChangePasswordUser(password: passwordTextFieldText, passwordConfirmation: confirmPassword)
+        
+        if let tokens = UserDefaults.standard.string(forKey: "ResetPasswordToken") {
+            self.resetPasswordToken = tokens
+        }
+        
+        self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
+            print("Result: \(result)")
+            switch result {
+            case .success:
+                print("Ok")
+            case .failure(let error):
+                if let networkError = error as? NetworkError {
+                    self.output.send(.showErrorAlert(error: networkError.displayableError))
+                } else {
+                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+                }
+            }
+        }
+    }
+    
+    private func setupSubscriberForCreateNewPasswordView() {
+        action
+            .sink { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .changePassword:
+                    self.changePassword()
+                }
+            }
+            .store(in: &cancellables)
+        output
+            .sink { [weak self] output in
+                guard let self else { return }
+                switch output {
+                case let .showErrorAlert(error):
+                    alertMessage = "\(error)"
+                    self.showAlert = true
+                }
+            }
+            .store(in: &cancellables)
     }
 }

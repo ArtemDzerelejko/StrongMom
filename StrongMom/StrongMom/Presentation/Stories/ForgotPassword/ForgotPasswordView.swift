@@ -54,7 +54,7 @@ struct ForgotPasswordView: View {
                         .padding(.horizontal, 20)
                         .disabled(!forgotPasswordViewModel.isValidEmail())
                         .fullScreenCover(isPresented: $forgotPasswordViewModel.showCheckYourInboxScreen) {
-                            CheckYourInboxView()
+                            CheckYourInboxView(forgotPasswordViewModel: forgotPasswordViewModel)
                         }
                         .alert(isPresented: $forgotPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),

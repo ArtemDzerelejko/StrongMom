@@ -10,6 +10,7 @@ import Foundation
 
 struct EmptyDecodable: Decodable {
     init(from decoder: Decoder) throws {}
+    init() {}
 }
 
 class BaseService {
@@ -59,8 +60,25 @@ class BaseService {
                                completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
         AF.request(url, method: method, parameters: parameters, encoder: encoder, headers: headers)
             .validate(statusCode: 200..<300)
+            .debugLog()
             .responseDecodable(of: EmptyDecodable.self) { response in
-                self.handleResponse(response: response, completion: completion)
+                print(response.request)
+                print(response.response)
+                print("Responde data \(response.data)")
+                if let code = response.response?.statusCode, (code >= 200 && code < 300) {
+                    completion(.success(EmptyDecodable()))
+                } else {
+                    self.handleResponse(response: response, completion: completion)
+                }
             }
+    }
+}
+
+extension Request {
+    public func debugLog() -> Self {
+        #if DEBUG
+        debugPrint(self)
+        #endif
+        return self
     }
 }

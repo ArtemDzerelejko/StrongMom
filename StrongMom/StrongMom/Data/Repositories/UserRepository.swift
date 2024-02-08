@@ -11,6 +11,7 @@ protocol UserRepositoryProtocol {
     func createUser(model: CreateUser, token: String, completion: @escaping (Result<UserTokenResponse, Error>) -> Void)
     func logInUser(model:  LogInUser, anonymousToken: String, completion: @escaping (Result<LogInUserTokenResponse, Error>) -> Void)
     func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void)
+    func changePassword(password: String, passwordConfirmation: String, confirmationToken: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void)
 }
 
 final class UserRepository: UserRepositoryProtocol {
@@ -46,6 +47,12 @@ final class UserRepository: UserRepositoryProtocol {
     
     func resetPassword(email: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
         userService.resetPassword(email: email, anonymousToken: anonymousToken) { result in
+            completion(result)
+        }
+    }
+    
+    func changePassword(password: String, passwordConfirmation: String, confirmationToken: String, anonymousToken: String, completion: @escaping (Result<EmptyDecodable, Error>) -> Void) {
+        userService.changePassword(password: password, passwordConfirmation: passwordConfirmation, confirmationToken: confirmationToken, anonymousToken: anonymousToken) { result in
             completion(result)
         }
     }

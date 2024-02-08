@@ -11,6 +11,7 @@ enum APIEndpoint {
     static let baseURL = "https://api-stag.k8s.strongmomapp.com/api/v1.0"
     
     case resetPassword(email: String)
+    case changePassword(confirmationToken: String)
     case getToken
     case createUser
     case logInUser
@@ -25,6 +26,8 @@ enum APIEndpoint {
             return "/application-users"
         case .logInUser:
             return "/login/email"
+        case .changePassword(confirmationToken: let confirmationToken):
+            return "/password/change/\(confirmationToken)"
         }
     }
     

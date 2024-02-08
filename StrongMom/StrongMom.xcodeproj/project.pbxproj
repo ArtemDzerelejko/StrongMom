@@ -69,6 +69,7 @@
 		ACD470032B72714F00BE1C16 /* PasswordMismatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470022B72714F00BE1C16 /* PasswordMismatchView.swift */; };
 		ACD470072B73CD5E00BE1C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */; };
 		ACD470092B73CDDC00BE1C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */; };
+		ACD4700B2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4700A2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		ACD470022B72714F00BE1C16 /* PasswordMismatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordMismatchView.swift; sourceTree = "<group>"; };
 		ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ACD4700A2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckYourInboxViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +406,7 @@
 			children = (
 				AC40FB222B69030300969EF3 /* ForgotPasswordViewModel.swift */,
 				AC40FB172B67E0E400969EF3 /* ForgotPasswordView.swift */,
+				ACD4700A2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift */,
 				AC40FB192B67E47E00969EF3 /* CheckYourInboxView.swift */,
 			);
 			path = ForgotPassword;
@@ -559,6 +562,7 @@
 				AC40FB062B629B9D00969EF3 /* String+Extensions.swift in Sources */,
 				ACD46FFF2B7268AA00BE1C16 /* CreateNewPasswordView.swift in Sources */,
 				AC0481572B5A8A0F0001212D /* ValidatePassword.swift in Sources */,
+				ACD4700B2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift in Sources */,
 				AC40FB092B62A3DC00969EF3 /* LogInView.swift in Sources */,
 				AC40FB0D2B62A8D200969EF3 /* SubtitleView.swift in Sources */,
 				AC40FB182B67E0E400969EF3 /* ForgotPasswordView.swift in Sources */,

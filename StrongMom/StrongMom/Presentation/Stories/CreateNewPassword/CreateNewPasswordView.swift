@@ -71,11 +71,17 @@ struct CreateNewPasswordView: View {
                         })
                         
                         PrimaryButton(isValid: createNewPasswordViewModel.isValidInput(), text: Strings.next) {
-                            print("Next")
+                            createNewPasswordViewModel.action.send(.changePassword)
                         }
-                        .disabled(!createNewPasswordViewModel.isValidInput())
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
+                        .disabled(!createNewPasswordViewModel.isValidInput())
+                        .alert(isPresented: $createNewPasswordViewModel.showAlert) {
+                            Alert(title: Text(Strings.error),
+                                  message: Text(createNewPasswordViewModel.alertMessage),
+                                  dismissButton: .default(Text(Strings.ok)))
+                        }
+                        
                         Spacer()
                     }
                     .navigationBarItems(leading: BackButton())

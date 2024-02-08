@@ -10,9 +10,10 @@ import Combine
 
 struct CheckYourInboxView: View {
     
-    @StateObject private var forgotPasswordViewModel = ForgotPasswordViewModel()
+    @ObservedObject var forgotPasswordViewModel: ForgotPasswordViewModel
     @State private var alertMessage = ""
     @State private var subscriberForCheckYourInboxView: AnyCancellable?
+    @StateObject private var checkYourInboxViewModel = CheckYourInboxViewModel()
     
     var body: some View {
         NavigationStack {
@@ -47,6 +48,46 @@ struct CheckYourInboxView: View {
                         }
                         .padding(.top, 40)
                         .padding(.horizontal, 59)
+                        
+                        // MARK: - TextField Section
+                        VStack {
+                            PrimaryTextField(text: $checkYourInboxViewModel.urlTextFieldText, placeholder: Strings.typeYourUrl)
+                                .padding(.top, 20)
+                                .padding(.horizontal, 20)
+                            
+                            HStack {
+                                if checkYourInboxViewModel.isValidInput() {
+                                    Text(Strings.correctUrl)
+                                        .font(AppFont.Caption1)
+                                        .foregroundColor(.customGreen)
+                                } else {
+                                    Text(Strings.urlRules)
+                                        .font(AppFont.Caption1)
+                                        .foregroundColor(.customLightBlack)
+                                }
+                                Spacer()
+                            }
+                            .padding(.horizontal, 32)
+                            .animation(.easeInOut(duration: 0.3), value: checkYourInboxViewModel.valueForAnimation)
+                        }
+                    
+                        // MARK: - Next Button Section
+                        PrimaryButton(isValid: checkYourInboxViewModel.isValidInput(), text: Strings.next) {
+                            checkYourInboxViewModel.showCreateNewPasswordView.toggle()
+                            checkYourInboxViewModel.extractResetPasswordTokenFromURL(checkYourInboxViewModel.urlTextFieldText)
+                        }
+                        .padding(.top, 20)
+                        .padding(.horizontal, 20)
+                        .disabled(!checkYourInboxViewModel.isValidInput())
+                        .fullScreenCover(isPresented: $checkYourInboxViewModel.showCreateNewPasswordView) {
+                            CreateNewPasswordView()
+                        }
+                        .alert(isPresented: $checkYourInboxViewModel.showAlert) {
+                            Alert(title: Text(Strings.error),
+                                  message: Text(checkYourInboxViewModel.alertMessage),
+                                  dismissButton: .default(Text(Strings.ok)))
+                        }
+                        
                         Spacer()
                     }
                     .navigationBarItems(leading: BackButton())
@@ -57,5 +98,5 @@ struct CheckYourInboxView: View {
 }
 
 #Preview {
-    CheckYourInboxView()
+    CheckYourInboxView(forgotPasswordViewModel: .init())
 }
