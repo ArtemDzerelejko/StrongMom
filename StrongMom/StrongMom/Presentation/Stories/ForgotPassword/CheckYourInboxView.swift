@@ -70,7 +70,7 @@ struct CheckYourInboxView: View {
                             .padding(.horizontal, 32)
                             .animation(.easeInOut(duration: 0.3), value: checkYourInboxViewModel.valueForAnimation)
                         }
-                    
+                        
                         // MARK: - Next Button Section
                         PrimaryButton(isValid: checkYourInboxViewModel.isValidInput(), text: Strings.next) {
                             checkYourInboxViewModel.showCreateNewPasswordView.toggle()

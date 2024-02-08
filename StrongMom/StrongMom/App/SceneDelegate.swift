@@ -16,7 +16,6 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
            let incomingURL = userActivity.webpageURL,
            let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true) {
             print(components)
-//            tryHandleUniversalLink(components)
         }
     }
     
@@ -25,7 +24,6 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
           let incomingURL = userActivity.webpageURL,
           let components = URLComponents(url: incomingURL, resolvingAgainstBaseURL: true) {
             print(components)
-//          return tryHandleUniversalLink(components)
         }
       }
 }

@@ -70,6 +70,7 @@
 		ACD470072B73CD5E00BE1C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */; };
 		ACD470092B73CDDC00BE1C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */; };
 		ACD4700B2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4700A2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift */; };
+		ACD4700D2B7577C100BE1C16 /* Request+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4700C2B7577C100BE1C16 /* Request+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		ACD470062B73CD5E00BE1C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD470082B73CDDC00BE1C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACD4700A2B74DD5300BE1C16 /* CheckYourInboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckYourInboxViewModel.swift; sourceTree = "<group>"; };
+		ACD4700C2B7577C100BE1C16 /* Request+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +365,7 @@
 				AC0481452B5916C50001212D /* Localizable+Extensions.swift */,
 				AC40FB052B629B9D00969EF3 /* String+Extensions.swift */,
 				AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */,
+				ACD4700C2B7577C100BE1C16 /* Request+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				AC0481392B5837B40001212D /* CustomLinkButtonWithText.swift in Sources */,
 				AC04816F2B5E4E610001212D /* SignUpViewModel.swift in Sources */,
 				AC40FB252B690FF700969EF3 /* Keys.swift in Sources */,
+				ACD4700D2B7577C100BE1C16 /* Request+Extensions.swift in Sources */,
 				AC39FE762B5FD36400684507 /* AuthorizationService.swift in Sources */,
 				AC0481212B581C710001212D /* SplashScreenView.swift in Sources */,
 				AC0481482B5947700001212D /* SignUpView.swift in Sources */,

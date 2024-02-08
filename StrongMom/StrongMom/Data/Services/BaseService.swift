@@ -62,23 +62,11 @@ class BaseService {
             .validate(statusCode: 200..<300)
             .debugLog()
             .responseDecodable(of: EmptyDecodable.self) { response in
-                print(response.request)
-                print(response.response)
-                print("Responde data \(response.data)")
                 if let code = response.response?.statusCode, (code >= 200 && code < 300) {
                     completion(.success(EmptyDecodable()))
                 } else {
                     self.handleResponse(response: response, completion: completion)
                 }
             }
-    }
-}
-
-extension Request {
-    public func debugLog() -> Self {
-        #if DEBUG
-        debugPrint(self)
-        #endif
-        return self
     }
 }

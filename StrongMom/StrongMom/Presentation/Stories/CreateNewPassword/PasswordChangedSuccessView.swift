@@ -37,7 +37,7 @@ struct PasswordChangedSuccessView: View {
                         .padding(.top, 40)
                         .padding(.horizontal, 35)
                         
-                      Spacer()
+                        Spacer()
                     }
                 })
             }

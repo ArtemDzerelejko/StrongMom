@@ -27,13 +27,9 @@ final class CheckYourInboxViewModel: ObservableObject {
     func extractResetPasswordTokenFromURL(_ urlString: String) {
         if let url = URL(string: urlString) {
             let path = url.path
-            print(url)
-            print("Path: \(path)")
             
-            if let range = path.range(of: "/reset-password/") {
+            if let range = path.range(of: Keys.resetPassword) {
                 self.resetPasswordToken = String(path[range.upperBound...])
-//                UserDefaults.standard.set(String(resetPasswordToken), forKey: "ResetPasswordToken")
-                print("Reset Password Token: \(resetPasswordToken)")
             } else {
                 print("Path doesn't contain '/reset-password/'")
             }

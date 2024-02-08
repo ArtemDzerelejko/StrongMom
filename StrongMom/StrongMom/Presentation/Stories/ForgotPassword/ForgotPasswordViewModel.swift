@@ -72,7 +72,7 @@ class ForgotPasswordViewModel: ObservableObject {
     private func setupSubscriberForForgotPasswordView() {
         action
             .sink { [weak self] action in
-                guard let self = self else { return }
+                guard let self else { return }
                 switch action {
                 case .forgotPassword:
                     self.forgotPassword()

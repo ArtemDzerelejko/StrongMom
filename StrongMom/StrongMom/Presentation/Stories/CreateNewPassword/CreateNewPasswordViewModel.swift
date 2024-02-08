@@ -61,7 +61,6 @@ final class CreateNewPasswordViewModel: ObservableObject {
         }
         
         guard let token = tokenResponse?.token else { return }
-        print(token)
         
         self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
             print("Result: \(result)")
@@ -81,7 +80,7 @@ final class CreateNewPasswordViewModel: ObservableObject {
     private func setupSubscriberForCreateNewPasswordView() {
         action
             .sink { [weak self] action in
-                guard let self = self else { return }
+                guard let self else { return }
                 switch action {
                 case .changePassword:
                     self.changePassword()

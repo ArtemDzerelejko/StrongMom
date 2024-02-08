@@ -38,6 +38,8 @@ struct CreateNewPasswordView: View {
                         .padding(.top, 22)
                         .padding(.horizontal, 20)
                         
+                        // MARK: - TextField Section
+                        
                         VStack(spacing: 8, content: {
                             SecureTextField(text: $createNewPasswordViewModel.passwordTextFieldText, placeholder: Strings.newPassword)
                                 .padding(.top, 24)
@@ -59,6 +61,8 @@ struct CreateNewPasswordView: View {
                             .animation(.easeInOut(duration: 0.3), value: createNewPasswordViewModel.valueForAnimation)
                         })
                         
+                        // MARK: - TextField Section
+                        
                         VStack(spacing: 8, content: {
                             SecureTextField(text: $createNewPasswordViewModel.confirmPassword, placeholder: Strings.confirmNewPassword)
                                 .padding(.top, 16)
@@ -69,6 +73,8 @@ struct CreateNewPasswordView: View {
                                                  confirmPassword: $createNewPasswordViewModel.confirmPassword,
                                                  valueForAnimation: $createNewPasswordViewModel.valueForAnimation)
                         })
+                        
+                        // MARK: - Continue Button Section
                         
                         PrimaryButton(isValid: createNewPasswordViewModel.isValidInput(), text: Strings.next) {
                             createNewPasswordViewModel.action.send(.changePassword)
