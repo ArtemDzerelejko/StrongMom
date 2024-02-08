@@ -15,7 +15,7 @@ final class CheckYourInboxViewModel: ObservableObject {
     @Published var alertMessage = ""
     @Published var showCreateNewPasswordView: Bool = false
     @Published var valueForAnimation = 0
-    @Published var resetPasswordToken: Substring = ""
+    @Published var resetPasswordToken: String = ""
     
     // MARK: - Check valid input
     func isValidInput() -> Bool {
@@ -31,8 +31,8 @@ final class CheckYourInboxViewModel: ObservableObject {
             print("Path: \(path)")
             
             if let range = path.range(of: "/reset-password/") {
-                self.resetPasswordToken = path[range.upperBound...]
-                UserDefaults.standard.set(String(resetPasswordToken), forKey: "ResetPasswordToken")
+                self.resetPasswordToken = String(path[range.upperBound...])
+//                UserDefaults.standard.set(String(resetPasswordToken), forKey: "ResetPasswordToken")
                 print("Reset Password Token: \(resetPasswordToken)")
             } else {
                 print("Path doesn't contain '/reset-password/'")

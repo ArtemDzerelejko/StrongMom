@@ -5,7 +5,6 @@
 //  Created by artem on 06.02.2024.
 //
 
-import SwiftUI
 import Combine
 
 final class CreateNewPasswordViewModel: ObservableObject {
@@ -15,10 +14,9 @@ final class CreateNewPasswordViewModel: ObservableObject {
     @Published var confirmPassword: String = ""
     @Published var showErrorText = false
     @Published var valueForAnimation = 0
-    @StateObject var checkYourInboxViewModel = CheckYourInboxViewModel()
     @Published var alertMessage = ""
     @Published var showAlert = false
-    @Published var resetPasswordToken: String = ""
+    private var resetPasswordToken: String
     
     var cancellables: Set<AnyCancellable> = []
     
@@ -36,7 +34,8 @@ final class CreateNewPasswordViewModel: ObservableObject {
     //MARK: - Private properties
     private let userUseCase = UserUseCase()
     
-    init() {
+    init(resetPasswordToken: String) {
+        self.resetPasswordToken = resetPasswordToken
         setupSubscriberForCreateNewPasswordView()
     }
     
@@ -63,12 +62,6 @@ final class CreateNewPasswordViewModel: ObservableObject {
         
         guard let token = tokenResponse?.token else { return }
         print(token)
-        
-//        let changePasswordUser = ChangePasswordUser(password: passwordTextFieldText, passwordConfirmation: confirmPassword)
-        
-        if let tokens = UserDefaults.standard.string(forKey: "ResetPasswordToken") {
-            self.resetPasswordToken = tokens
-        }
         
         self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
             print("Result: \(result)")

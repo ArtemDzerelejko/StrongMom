@@ -80,7 +80,7 @@ struct CheckYourInboxView: View {
                         .padding(.horizontal, 20)
                         .disabled(!checkYourInboxViewModel.isValidInput())
                         .fullScreenCover(isPresented: $checkYourInboxViewModel.showCreateNewPasswordView) {
-                            CreateNewPasswordView()
+                            CreateNewPasswordView(createNewPasswordViewModel: .init(resetPasswordToken: checkYourInboxViewModel.resetPasswordToken))
                         }
                         .alert(isPresented: $checkYourInboxViewModel.showAlert) {
                             Alert(title: Text(Strings.error),

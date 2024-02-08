@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateNewPasswordView: View {
     
-    @StateObject private var createNewPasswordViewModel = CreateNewPasswordViewModel()
+    @ObservedObject var createNewPasswordViewModel: CreateNewPasswordViewModel
     
     var body: some View {
         NavigationStack {
@@ -92,5 +92,5 @@ struct CreateNewPasswordView: View {
 }
 
 #Preview {
-    CreateNewPasswordView()
+    CreateNewPasswordView(createNewPasswordViewModel: .init(resetPasswordToken: ""))
 }
