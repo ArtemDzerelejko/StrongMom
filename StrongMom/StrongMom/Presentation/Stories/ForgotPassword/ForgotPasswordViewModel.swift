@@ -56,6 +56,7 @@ class ForgotPasswordViewModel: ObservableObject {
         print(token)
         
         self.userUseCase.resetPassword(email: emailTextFieldText, anonymousToken: token) { result in
+            print(result)
             switch result {
             case .success:
                 print("Ok")

@@ -10,6 +10,21 @@ import Foundation
 
 class UserService: BaseService {
     
+//    private func commonHeaders(token: String) -> HTTPHeaders {
+//        return [
+//            "Authorization": "Bearer \(token)",
+//            "Accept-Language": "en",
+//            "Content-Type": "application/json"
+//        ]
+//    }
+//    
+//    private func headersForChangePassword(token: String) -> HTTPHeaders {
+//        return [
+//            "Authorization": "Bearer \(token)",
+//            "Accept-Language": "en",
+//        ]
+//    }
+    
     private func commonHeaders(token: String, includeContentType: Bool = true) -> HTTPHeaders {
         var headers: HTTPHeaders = [
             "Authorization": "Bearer \(token)",
@@ -22,8 +37,8 @@ class UserService: BaseService {
         
         return headers
     }
-    
-    
+
+
     private func headersForChangePassword(token: String) -> HTTPHeaders {
         return commonHeaders(token: token, includeContentType: false)
     }
