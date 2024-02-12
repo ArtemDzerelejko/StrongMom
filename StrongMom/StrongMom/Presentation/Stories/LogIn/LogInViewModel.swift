@@ -5,7 +5,6 @@
 //  Created by artem on 25.01.2024.
 //
 
-import SwiftUI
 import Combine
 
 final class LogInViewModel: ObservableObject {

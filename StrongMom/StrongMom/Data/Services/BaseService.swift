@@ -62,10 +62,6 @@ class BaseService {
             .validate(statusCode: 200..<300)
             .debugLog()
             .responseDecodable(of: EmptyDecodable.self) { response in
-                print(response.request)
-                print(response.response)
-                print(response.response?.statusCode)
-                print("Responde data \(response.data)")
                 if let code = response.response?.statusCode, (code >= 200 && code < 300) {
                     completion(.success(EmptyDecodable()))
                 } else {

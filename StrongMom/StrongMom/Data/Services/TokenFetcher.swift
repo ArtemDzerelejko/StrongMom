@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-typealias token = String?
+typealias Token = String?
 
-class TokenFetcher {
-    static func getToken(completion: @escaping(token) -> Void) {
+final class TokenFetcher {
+    static func getToken(completion: @escaping(Token) -> Void) {
         
         let responceToken = try? TokenManager.get(service: Keys.strongMom)
         

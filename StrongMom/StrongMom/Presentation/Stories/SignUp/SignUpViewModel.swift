@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 
-
 final class SignUpViewModel: ObservableObject {
     
     // MARK: - Public properties
