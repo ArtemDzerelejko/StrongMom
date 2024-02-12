@@ -48,7 +48,6 @@ struct ForgotPasswordView: View {
                         // MARK: - Next Button Section
                         PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next) {
                             forgotPasswordViewModel.action.send(.forgotPassword)
-                            forgotPasswordViewModel.showCheckYourInboxScreen.toggle()
                         }
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
@@ -56,6 +55,7 @@ struct ForgotPasswordView: View {
                         .fullScreenCover(isPresented: $forgotPasswordViewModel.showCheckYourInboxScreen) {
                             CheckYourInboxView(forgotPasswordViewModel: forgotPasswordViewModel)
                         }
+
                         .alert(isPresented: $forgotPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
                                   message: Text(forgotPasswordViewModel.alertMessage),

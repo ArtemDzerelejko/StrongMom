@@ -49,18 +49,12 @@ final class LogInViewModel: ObservableObject {
     
     // MARK: LogIn User
     func logInUser() {
-        var tokenResponse: TokenResponse?
-        do {
-            tokenResponse = try TokenManager.get(service: Keys.strongMom)
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
-        
+        guard let token = TokenFetcher.getToken(service: Keys.strongMom) else { return }
+
         let modelForLogInUser = LogInUser(email: self.emailTextFieldText, password: self.passwordTextFieldText)
         
         print(modelForLogInUser)
-        
-        guard let token = tokenResponse?.token else {return}
+
         self.userUseCase.logInUser(model: modelForLogInUser, anonymousToken: token) { result in
             switch result {
             case .success(let logInUserResponse):

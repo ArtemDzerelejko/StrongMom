@@ -63,6 +63,7 @@
 		AC40FB9B2B6BD13000969EF3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */; };
 		AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */; };
 		AC40FBBD2B6D240E00969EF3 /* ModelForTokenRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */; };
+		AC5D618A2B7A690C005D6044 /* TokenFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5D61892B7A690C005D6044 /* TokenFetcher.swift */; };
 		ACD46FFD2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD46FFC2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift */; };
 		ACD46FFF2B7268AA00BE1C16 /* CreateNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD46FFE2B7268AA00BE1C16 /* CreateNewPasswordView.swift */; };
 		ACD470012B7269B300BE1C16 /* PasswordChangedSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD470002B7269B300BE1C16 /* PasswordChangedSuccessView.swift */; };
@@ -131,6 +132,7 @@
 		AC40FB9A2B6BD13000969EF3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AC40FBBC2B6D240E00969EF3 /* ModelForTokenRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForTokenRemote.swift; sourceTree = "<group>"; };
+		AC5D61892B7A690C005D6044 /* TokenFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenFetcher.swift; sourceTree = "<group>"; };
 		ACD46FFC2B72689F00BE1C16 /* CreateNewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordViewModel.swift; sourceTree = "<group>"; };
 		ACD46FFE2B7268AA00BE1C16 /* CreateNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPasswordView.swift; sourceTree = "<group>"; };
 		ACD470002B7269B300BE1C16 /* PasswordChangedSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedSuccessView.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				AC39FE752B5FD36400684507 /* AuthorizationService.swift */,
 				AC40FB0E2B67AC4800969EF3 /* TokenManager.swift */,
 				AC40FB9C2B6BD28100969EF3 /* NetworkError.swift */,
+				AC5D61892B7A690C005D6044 /* TokenFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				AC04814C2B5955220001212D /* PrimaryTextField.swift in Sources */,
 				ACD470092B73CDDC00BE1C16 /* SceneDelegate.swift in Sources */,
 				AC40FB0F2B67AC4800969EF3 /* TokenManager.swift in Sources */,
+				AC5D618A2B7A690C005D6044 /* TokenFetcher.swift in Sources */,
 				AC40FB9D2B6BD28100969EF3 /* NetworkError.swift in Sources */,
 				AC0481522B5A87530001212D /* AgreementButtonsView.swift in Sources */,
 				AC40FB322B6A787E00969EF3 /* ModelForToken.swift in Sources */,

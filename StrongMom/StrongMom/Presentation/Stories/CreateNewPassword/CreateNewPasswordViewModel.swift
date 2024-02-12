@@ -53,14 +53,7 @@ final class CreateNewPasswordViewModel: ObservableObject {
     
     // MARK: - Change password
     func changePassword() {
-        var tokenResponse: TokenResponse?
-        do {
-            tokenResponse = try TokenManager.get(service: Keys.strongMom)
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
-        
-        guard let token = tokenResponse?.token else { return }
+        guard let token = TokenFetcher.getToken(service: Keys.strongMom) else { return }
         
         self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
             print("Result: \(result)")
