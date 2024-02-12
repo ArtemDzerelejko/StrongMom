@@ -38,6 +38,7 @@ final class SignUpViewModel: ObservableObject {
     }
     
     enum Output {
+        case showAccountConfirmationScreen
         case showErrorAlert(error: String)
     }
     
@@ -107,6 +108,7 @@ final class SignUpViewModel: ObservableObject {
             case .success(let userTokenResponse):
                 self.userTokenResponse = userTokenResponse
                 print("UserTokenResponse: \(userTokenResponse)")
+                self.output.send(.showAccountConfirmationScreen)
             case .failure(let error):
                 print("Failed to fetch token: \(error.localizedDescription)")
                 if let networkError = error as? NetworkError {
@@ -137,6 +139,8 @@ final class SignUpViewModel: ObservableObject {
                 case let .showErrorAlert(error):
                     alertMessage = "\(error)"
                     self.showAlert = true
+                case .showAccountConfirmationScreen:
+                    self.showAccountConfirmationScreen = true
                 }
             }
             .store(in: &cancellables)

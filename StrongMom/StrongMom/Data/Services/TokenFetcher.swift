@@ -7,18 +7,25 @@
 
 import SwiftUI
 
+typealias token = String?
+
 class TokenFetcher {
-      static func getToken(service: String) -> String? {
-        var tokenResponse: TokenResponse?
+    static func getToken(completion: @escaping(token) -> Void) {
         
-        do {
-          tokenResponse = try TokenManager.get(service: service)
-        } catch {
-          print("Error: \(error.localizedDescription)")
+        let responceToken = try? TokenManager.get(service: Keys.strongMom)
+        
+        if let token = responceToken?.token {
+            completion(token)
+        } else {
+            let authorizationUseCase = AuthorizationUseCase()
+            authorizationUseCase.getAnonymousToken { result in
+                if case .success(let tokenResponse) = result {
+                    try? TokenManager.save(service: Keys.strongMom, tokenResponse: tokenResponse)
+                    completion(tokenResponse.token)
+                } else {
+                    completion(nil)
+                }
+            }
         }
-        
-        guard let token = tokenResponse?.token else { return nil }
-        
-        return token
-      }
+    }
 }

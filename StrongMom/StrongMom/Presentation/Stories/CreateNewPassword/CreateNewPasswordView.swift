@@ -76,9 +76,7 @@ struct CreateNewPasswordView: View {
                         
                         // MARK: - Continue Button Section
                         
-                        PrimaryButton(isValid: createNewPasswordViewModel.isValidInput(), text: Strings.next) {
-                            createNewPasswordViewModel.action.send(.changePassword)
-                        }
+                        PrimaryButton(isValid: createNewPasswordViewModel.isValidInput(), text: Strings.next, action:  createNewPasswordViewModel.action.send(.changePassword))
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!createNewPasswordViewModel.isValidInput())

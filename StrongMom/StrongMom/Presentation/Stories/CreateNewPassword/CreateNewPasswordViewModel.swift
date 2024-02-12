@@ -53,20 +53,23 @@ final class CreateNewPasswordViewModel: ObservableObject {
     
     // MARK: - Change password
     func changePassword() {
-        guard let token = TokenFetcher.getToken(service: Keys.strongMom) else { return }
-        
-        self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
-            print("Result: \(result)")
-            switch result {
-            case .success:
-                print("Ok")
-            case .failure(let error):
-                if let networkError = error as? NetworkError {
-                    self.output.send(.showErrorAlert(error: networkError.displayableError))
-                } else {
-                    self.output.send(.showErrorAlert(error: error.localizedDescription))
-                }
-            }
+       TokenFetcher.getToken { [weak self] result in
+           guard let self else { return }
+           guard let token = result else { return }
+           
+           self.userUseCase.changePassword(password: passwordTextFieldText, passwordConfirmation: confirmPassword, confirmationToken: resetPasswordToken, anonymousToken: token) { result in
+               print("Result: \(result)")
+               switch result {
+               case .success:
+                   print("Ok")
+               case .failure(let error):
+                   if let networkError = error as? NetworkError {
+                       self.output.send(.showErrorAlert(error: networkError.displayableError))
+                   } else {
+                       self.output.send(.showErrorAlert(error: error.localizedDescription))
+                   }
+               }
+           }
         }
     }
     

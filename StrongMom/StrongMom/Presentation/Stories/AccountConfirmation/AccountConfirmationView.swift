@@ -36,9 +36,7 @@ struct AccountConfirmationView: View {
                             .padding(.top, 40)
                             .padding(.horizontal, 25)
                         
-                        PrimaryButton(isValid: true, text: Strings.continueButton) {
-                            print("Continue")
-                        }
+                        PrimaryButton(isValid: true, text: Strings.continueButton, action: print("Continue"))
                         .padding(.top, 40)
                         .padding(.horizontal, 35)
                     }

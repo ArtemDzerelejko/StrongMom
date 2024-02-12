@@ -25,16 +25,10 @@ final class CheckYourInboxViewModel: ObservableObject {
     
     // MARK: - Extract Reset Password Token from URL
     func extractResetPasswordTokenFromURL(_ urlString: String) {
-        if let url = URL(string: urlString) {
-            let path = url.path
-            
-            if let range = path.range(of: Keys.resetPassword) {
-                self.resetPasswordToken = String(path[range.upperBound...])
-            } else {
-                print("Path doesn't contain '/reset-password/'")
-            }
-        } else {
-            print("Invalid URL")
-        }
+        guard let url = URL(string: urlString) else { return }
+        guard let range = url.path.range(of: Keys.resetPassword) else { return }
+        
+        self.resetPasswordToken = String(url.path[range.upperBound...])
+        self.showCreateNewPasswordView = true
     }
 }

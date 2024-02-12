@@ -46,9 +46,7 @@ struct ForgotPasswordView: View {
                         .padding(.horizontal, 20)
                         
                         // MARK: - Next Button Section
-                        PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next) {
-                            forgotPasswordViewModel.action.send(.forgotPassword)
-                        }
+                        PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next, action:  forgotPasswordViewModel.action.send(.forgotPassword))
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!forgotPasswordViewModel.isValidEmail())

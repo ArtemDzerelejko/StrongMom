@@ -64,10 +64,8 @@ struct SignUpView: View {
                         .padding(.bottom, 54)
                         
                         // MARK: - Continue Button Section
-                        PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail) {
-                            signUpViewModel.action.send(.createUser)
-                            signUpViewModel.showAccountConfirmationScreen.toggle()
-                        }
+                        PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail, action: signUpViewModel.action.send(.createUser))
+                        
                         .padding(.horizontal, 20)
                         .padding(.bottom, 26)
                         .disabled(!signUpViewModel.isValidInput())

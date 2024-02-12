@@ -72,10 +72,8 @@ struct CheckYourInboxView: View {
                         }
                         
                         // MARK: - Next Button Section
-                        PrimaryButton(isValid: checkYourInboxViewModel.isValidInput(), text: Strings.next) {
-                            checkYourInboxViewModel.showCreateNewPasswordView.toggle()
-                            checkYourInboxViewModel.extractResetPasswordTokenFromURL(checkYourInboxViewModel.urlTextFieldText)
-                        }
+                        PrimaryButton(isValid: checkYourInboxViewModel.isValidInput(), text: Strings.next, action:  checkYourInboxViewModel.extractResetPasswordTokenFromURL(checkYourInboxViewModel.urlTextFieldText))
+
                         .padding(.top, 20)
                         .padding(.horizontal, 20)
                         .disabled(!checkYourInboxViewModel.isValidInput())

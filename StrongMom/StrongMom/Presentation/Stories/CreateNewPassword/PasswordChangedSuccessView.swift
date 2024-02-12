@@ -31,9 +31,7 @@ struct PasswordChangedSuccessView: View {
                         .padding(.top, 40)
                         .padding(.horizontal, 30)
                         
-                        PrimaryButton(isValid: true, text: Strings.okay) {
-                            print("Okey button")
-                        }
+                        PrimaryButton(isValid: true, text: Strings.okay, action: print("Okey button"))
                         .padding(.top, 40)
                         .padding(.horizontal, 35)
                         
