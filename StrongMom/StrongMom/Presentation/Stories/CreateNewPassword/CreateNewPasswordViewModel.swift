@@ -17,6 +17,8 @@ final class CreateNewPasswordViewModel: ObservableObject {
     @Published var alertMessage = ""
     @Published var showAlert = false
     private var resetPasswordToken: String
+    @Published var showPasswordChangedSuccessView: Bool = false
+    
     
     var cancellables: Set<AnyCancellable> = []
     
@@ -25,6 +27,7 @@ final class CreateNewPasswordViewModel: ObservableObject {
     }
     
     enum Output {
+        case showPasswordChangedSuccessView
         case showErrorAlert(error: String)
     }
     
@@ -61,7 +64,7 @@ final class CreateNewPasswordViewModel: ObservableObject {
                print("Result: \(result)")
                switch result {
                case .success:
-                   print("Ok")
+                   self.output.send(.showPasswordChangedSuccessView)
                case .failure(let error):
                    if let networkError = error as? NetworkError {
                        self.output.send(.showErrorAlert(error: networkError.displayableError))
@@ -90,6 +93,8 @@ final class CreateNewPasswordViewModel: ObservableObject {
                 case let .showErrorAlert(error):
                     alertMessage = "\(error)"
                     self.showAlert = true
+                case .showPasswordChangedSuccessView:
+                    self.showPasswordChangedSuccessView = true
                 }
             }
             .store(in: &cancellables)

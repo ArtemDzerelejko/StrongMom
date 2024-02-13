@@ -80,6 +80,9 @@ struct CreateNewPasswordView: View {
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!createNewPasswordViewModel.isValidInput())
+                        .fullScreenCover(isPresented: $createNewPasswordViewModel.showPasswordChangedSuccessView) {
+                           PasswordChangedSuccessView()
+                        }
                         .alert(isPresented: $createNewPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
                                   message: Text(createNewPasswordViewModel.alertMessage),
