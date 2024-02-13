@@ -70,3 +70,24 @@ class LogInUser: Codable {
                         password: password)
     }
 }
+
+// MARK: - ChangePasswordUser
+class ChangePasswordUser: Codable {
+    var password: String?
+    var passwordConfirmation: String?
+    
+    init(password: String? = nil,
+         passwordConfirmation: String? = nil) {
+        self.password = password
+        self.passwordConfirmation = passwordConfirmation
+    }
+    
+    init(from remote: ChangePasswordUserRemote) {
+        self.password = remote.password ?? ""
+        self.passwordConfirmation = remote.passwordConfirmation ?? ""
+    }
+    
+    var remoteModel: ChangePasswordUserRemote {
+        ChangePasswordUserRemote(password: password, passwordConfirmation: passwordConfirmation)
+    }
+}

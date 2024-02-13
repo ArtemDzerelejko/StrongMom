@@ -46,6 +46,9 @@
 "confirmationLinkInstructions" = "You will receive your confirmation link\nvia email to reset the password";
 "didntReceiveLink" = "Didn’t receive a link?";
 "resendEmail" = "Resent Email";
+"typeYourUrl" = "Type URL";
+"urlRules" = "URL must include: at least 1 characters";
+"correctUrl" = "Correct URL";
 
 // MARK: - CreateNewPasswordView
 "createNewPassword" = "Create New\nPassword";
@@ -60,3 +63,6 @@
 // MARK: - AccountConfirmationView
 "accountConfirmationInstructions" = "You will receive your confirmation link\nvia email to confirm an account creation.";
 "accountConfirmationReminder" = "If you don’t confirm an account creation you still will\nbe able to explore STRONGMom app as a guest.";
+
+// MARK: - CreateNewPasswordView
+"securePassword" = "Secure password";

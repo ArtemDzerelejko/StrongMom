@@ -7,13 +7,14 @@
 
 import SwiftUI
 
+typealias EmptyClosure = () -> Void
+
 struct PrimaryButton: View {
     let isValid: Bool
     let buttonText: String
-    let action: () -> Void
+    let action: EmptyClosure
     
-    
-    init(isValid: Bool?, text: String, action: @escaping () -> Void) {
+    init(isValid: Bool?, text: String, action: @autoclosure @escaping EmptyClosure) {
         self.isValid = isValid ?? true
         self.buttonText = text
         self.action = action

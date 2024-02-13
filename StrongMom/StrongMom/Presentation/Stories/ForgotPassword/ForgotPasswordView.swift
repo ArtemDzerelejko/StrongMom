@@ -46,16 +46,14 @@ struct ForgotPasswordView: View {
                         .padding(.horizontal, 20)
                         
                         // MARK: - Next Button Section
-                        PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next) {
-                            forgotPasswordViewModel.action.send(.forgotPassword)
-                            forgotPasswordViewModel.showCheckYourInboxScreen.toggle()
-                        }
+                        PrimaryButton(isValid: forgotPasswordViewModel.isValidEmail(), text: Strings.next, action:  forgotPasswordViewModel.action.send(.forgotPassword))
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!forgotPasswordViewModel.isValidEmail())
                         .fullScreenCover(isPresented: $forgotPasswordViewModel.showCheckYourInboxScreen) {
-                            CheckYourInboxView()
+                            CheckYourInboxView(forgotPasswordViewModel: forgotPasswordViewModel)
                         }
+
                         .alert(isPresented: $forgotPasswordViewModel.showAlert) {
                             Alert(title: Text(Strings.error),
                                   message: Text(forgotPasswordViewModel.alertMessage),
@@ -67,6 +65,10 @@ struct ForgotPasswordView: View {
                 }
             }
             .onTapGesture { self.endEditing() }
+            .onOpenURL { incomingURL in
+                print("App was opened via URL: \(incomingURL)")
+                print(incomingURL)
+            }
         }
     }
 }

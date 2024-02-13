@@ -22,3 +22,9 @@ struct LogInUserRemote: Codable {
     var email: String?
     var password: String?
 }
+
+// MARK: - ChangePasswordUserRemote
+struct ChangePasswordUserRemote: Codable {
+    var password: String?
+    var passwordConfirmation: String?
+}

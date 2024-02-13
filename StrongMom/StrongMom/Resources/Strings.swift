@@ -56,6 +56,9 @@ struct Strings {
     static let confirmationLinkInstructions: String = "confirmationLinkInstructions".localized
     static let didntReceiveLink: String = "didntReceiveLink".localized
     static let resendEmail: String = "resendEmail".localized
+    static let typeYourUrl: String = "typeYourUrl".localized
+    static let urlRules: String = "urlRules".localized
+    static let correctUrl: String = "correctUrl".localized
     
     // MARK: - CreateNewPasswordView
     static let createNewPassword: String = "createNewPassword".localized
@@ -70,4 +73,7 @@ struct Strings {
     // MARK: - AccountConfirmationView
     static let accountConfirmationInstructions: String = "accountConfirmationInstructions".localized
     static let accountConfirmationReminder: String = "accountConfirmationReminder".localized
+    
+    // MARK: - CreateNewPasswordView
+    static let securePassword: String = "securePassword".localized
 }

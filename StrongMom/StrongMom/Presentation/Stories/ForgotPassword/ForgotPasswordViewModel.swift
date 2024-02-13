@@ -23,6 +23,7 @@ class ForgotPasswordViewModel: ObservableObject {
     }
     
     enum Output {
+        case showCheckYourInboxScreen
         case showErrorAlert(error: String)
     }
     
@@ -45,25 +46,22 @@ class ForgotPasswordViewModel: ObservableObject {
     
     // MARK: - ForgotPassword
     func forgotPassword() {
-        var tokenResponse: TokenResponse?
-        do {
-            tokenResponse = try TokenManager.get(service: Keys.strongMom)
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
-        
-        guard let token = tokenResponse?.token else { return }
-        print(token)
-        
-        self.userUseCase.resetPassword(email: emailTextFieldText, anonymousToken: token) { result in
-            switch result {
-            case .success:
-                print("Ok")
-            case .failure(let error):
-                if let networkError = error as? NetworkError {
-                    self.output.send(.showErrorAlert(error: networkError.displayableError))
-                } else {
-                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+        TokenFetcher.getToken { [weak self] result in
+            guard let self else { return }
+            guard let token = result else { return }
+            
+            self.userUseCase.resetPassword(email: emailTextFieldText, anonymousToken: token) { result in
+                print(result)
+                switch result {
+                case .success:
+                    self.output.send(.showCheckYourInboxScreen)
+                case .failure(let error):
+                    print("Failed: \(error.localizedDescription)")
+                    if let networkError = error as? NetworkError {
+                        self.output.send(.showErrorAlert(error: networkError.displayableError))
+                    } else {
+                        self.output.send(.showErrorAlert(error: error.localizedDescription))
+                    }
                 }
             }
         }
@@ -86,6 +84,8 @@ class ForgotPasswordViewModel: ObservableObject {
                 case let .showErrorAlert(error):
                     alertMessage = "\(error)"
                     self.showAlert = true
+                case .showCheckYourInboxScreen:
+                    self.showCheckYourInboxScreen.toggle()
                 }
             }
             .store(in: &cancellables)

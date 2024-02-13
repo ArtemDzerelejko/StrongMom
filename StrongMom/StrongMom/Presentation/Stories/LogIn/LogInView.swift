@@ -65,9 +65,7 @@ struct LogInView: View {
                         
                         // MARK: - Continue Button Section
                         
-                        PrimaryButton(isValid: logInViewModel.isValidLogIn(), text: Strings.continueButton) {
-                            logInViewModel.action.send(.logInUser)
-                        }
+                        PrimaryButton(isValid: logInViewModel.isValidLogIn(), text: Strings.continueButton, action:  logInViewModel.action.send(.logInUser))
                         .padding(.top, 36)
                         .padding(.horizontal, 20)
                         .disabled(!logInViewModel.isValidLogIn())

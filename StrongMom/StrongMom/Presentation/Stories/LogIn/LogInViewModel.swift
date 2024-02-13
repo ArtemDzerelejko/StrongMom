@@ -5,7 +5,6 @@
 //  Created by artem on 25.01.2024.
 //
 
-import SwiftUI
 import Combine
 
 final class LogInViewModel: ObservableObject {
@@ -49,29 +48,26 @@ final class LogInViewModel: ObservableObject {
     
     // MARK: LogIn User
     func logInUser() {
-        var tokenResponse: TokenResponse?
-        do {
-            tokenResponse = try TokenManager.get(service: Keys.strongMom)
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
-        
-        let modelForLogInUser = LogInUser(email: self.emailTextFieldText, password: self.passwordTextFieldText)
-        
-        print(modelForLogInUser)
-        
-        guard let token = tokenResponse?.token else {return}
-        self.userUseCase.logInUser(model: modelForLogInUser, anonymousToken: token) { result in
-            switch result {
-            case .success(let logInUserResponse):
-                self.logInUserResponse = logInUserResponse
-                print("LogInUserResponse: \(logInUserResponse)")
-            case .failure(let error):
-                print("Failed to fetch token: \(error.localizedDescription)")
-                if let networkError = error as? NetworkError {
-                    self.output.send(.showErrorAlert(error: networkError.displayableError))
-                } else {
-                    self.output.send(.showErrorAlert(error: error.localizedDescription))
+        TokenFetcher.getToken { [weak self] result in
+            guard let self else { return }
+            guard let token = result else { return }
+            
+            let modelForLogInUser = LogInUser(email: self.emailTextFieldText, password: self.passwordTextFieldText)
+            
+            print(modelForLogInUser)
+            
+            self.userUseCase.logInUser(model: modelForLogInUser, anonymousToken: token) { result in
+                switch result {
+                case .success(let logInUserResponse):
+                    self.logInUserResponse = logInUserResponse
+                    print("LogInUserResponse: \(logInUserResponse)")
+                case .failure(let error):
+                    print("Failed to fetch token: \(error.localizedDescription)")
+                    if let networkError = error as? NetworkError {
+                        self.output.send(.showErrorAlert(error: networkError.displayableError))
+                    } else {
+                        self.output.send(.showErrorAlert(error: error.localizedDescription))
+                    }
                 }
             }
         }

@@ -9,4 +9,5 @@ import Foundation
 
 struct Keys {
     static let strongMom: String = "StrongMom"
+    static let resetPassword: String = "/reset-password/"
 }

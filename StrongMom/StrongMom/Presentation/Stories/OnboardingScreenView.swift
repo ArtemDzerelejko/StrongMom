@@ -34,14 +34,13 @@ struct OnboardingScreenView: View {
                         .padding(.bottom, 133)
                     
                     // MARK: - Create Account Button
-                    PrimaryButton(isValid: true, text: Strings.createAccount) {
-                        showScreen.toggle()
-                    }
+                    PrimaryButton(isValid: true, text: Strings.createAccount, action:   showScreen.toggle())
                     
-                    .fullScreenCover(isPresented: $showScreen) {
-                        SignUpView()
-                    }
-                    .padding(35)
+                    
+                        .fullScreenCover(isPresented: $showScreen) {
+                            SignUpView()
+                        }
+                        .padding(35)
                     
                     // MARK: - Custom Link Button
                     CustomLinkButtonWithText(text: Strings.haveAccount, linkText: Strings.logIn, textColor: .white) {

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import UIKit
 
 @main
 struct StrongMomApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+
     var body: some Scene {
         WindowGroup {
             SplashScreenView()

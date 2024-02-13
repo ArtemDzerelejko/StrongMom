@@ -9,9 +9,21 @@ import Foundation
 
 class TokenManager {
     
-    enum KeychainError: Error {
+    enum KeychainError: Error, LocalizedError {
         case duplicateEntry
         case unknown(OSStatus)
+        case errorSecSuccess
+        
+        var errorDescription: String? {
+            switch self {
+            case .duplicateEntry:
+                "Duplicate Entry"
+            case .unknown(let oSStatus):
+                "Unknown \(oSStatus)"
+            case .errorSecSuccess:
+                "Error sec success"
+            }
+        }
     }
     
     static func save(
@@ -30,13 +42,13 @@ class TokenManager {
         case errSecDuplicateItem:
             throw KeychainError.duplicateEntry
         case errSecSuccess:
-            print("Token saved successfully")
+            throw KeychainError.errorSecSuccess
         default:
             throw KeychainError.unknown(status)
         }
     }
     
-    static func get(service: String) throws -> TokenResponse? {
+    static func get(service: String) throws -> TokenResponse {
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -50,12 +62,12 @@ class TokenManager {
         switch status {
         case errSecSuccess:
             guard let retrievedData = item as? Data,
-                  let token = String(data: retrievedData, encoding: .utf8) else {
-                return nil
-            }
+                  let token = String(data: retrievedData, encoding: .utf8)
+            else { throw KeychainError.unknown(status) }
+            
             return TokenResponse(token: token, refreshToken: "")
         case errSecItemNotFound:
-            return nil
+            throw KeychainError.unknown(status)
         default:
             throw KeychainError.unknown(status)
         }

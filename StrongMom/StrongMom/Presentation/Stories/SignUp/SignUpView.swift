@@ -56,23 +56,16 @@ struct SignUpView: View {
                             SecureTextField(text: $signUpViewModel.confirmPassword, placeholder: Strings.confirmPassword)
                                 .padding(.horizontal, 20)
                             
-                            Text(Strings.passwordMismatch)
-                                .font(AppFont.Caption1)
-                                .foregroundColor(.customDeepPink)
-                                .onAppear {signUpViewModel.showErrorText = true}
-                                .padding(.trailing, 39)
-                                .padding(.leading, 30)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .opacity(signUpViewModel.passwordTextFieldText != signUpViewModel.confirmPassword ? 1 : 0)
-                                .animation(.easeInOut(duration: 0.3), value: signUpViewModel.valueForAnimation)
+                            PasswordMismatchView(showErrorText: $signUpViewModel.showErrorText,
+                                                 password: $signUpViewModel.passwordTextFieldText,
+                                                 confirmPassword: $signUpViewModel.confirmPassword,
+                                                 valueForAnimation: $signUpViewModel.valueForAnimation)
                         })
                         .padding(.bottom, 54)
                         
                         // MARK: - Continue Button Section
-                        PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail) {
-                            signUpViewModel.action.send(.createUser)
-                            signUpViewModel.showAccountConfirmationScreen.toggle()
-                        }
+                        PrimaryButton(isValid: signUpViewModel.isValidInput(), text: Strings.continueWithEmail, action: signUpViewModel.action.send(.createUser))
+                        
                         .padding(.horizontal, 20)
                         .padding(.bottom, 26)
                         .disabled(!signUpViewModel.isValidInput())
